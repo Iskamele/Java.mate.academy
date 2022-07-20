@@ -1,6 +1,6 @@
 package section01_JavaBasics.topic11_Practice;
 
-public class HelpInSlack {
+public class HelpInSlack1 {
     public static void main(String[] args) {
         // h e l l o
         // 0 - 2 - 4
