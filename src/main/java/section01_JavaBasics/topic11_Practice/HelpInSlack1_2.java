@@ -1,6 +1,6 @@
 package section01_JavaBasics.topic11_Practice;
 
-public class HelpInSlack1 {
+public class HelpInSlack1_2 {
     public static void main(String[] args) {
         System.out.println(removeOddChars("hello")); // hlo
         System.out.println(removeOddChars("1234")); // 13
@@ -13,12 +13,12 @@ public class HelpInSlack1 {
         if (originalString.isEmpty()) {
             return originalString;
         }
-        char[] array = originalString.toCharArray();
-        StringBuilder builder = new StringBuilder();
 
-        for (int i = 0; i < array.length; i++) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < originalString.length(); i++) {
             if (i % 2 == 0) {
-                builder.append(array[i]);
+                builder.append(originalString.charAt(i));
+
             }
         }
         return builder.toString();
