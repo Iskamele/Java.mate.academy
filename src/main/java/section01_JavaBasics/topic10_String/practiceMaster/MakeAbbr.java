@@ -1,4 +1,4 @@
-package section01_JavaBasics.topic10_String.practice;
+package section01_JavaBasics.topic10_String.practiceMaster;
 
 public class MakeAbbr {
     public static void main(String[] args) {
@@ -8,14 +8,12 @@ public class MakeAbbr {
     }
 
     public static String makeAbbr(String fullName) {
+        String[] words = fullName.split(" ");
+        StringBuilder builder = new StringBuilder();
 
-        StringBuilder abbr = new StringBuilder();
-        String[] array = fullName.split(" ");
-
-        for (String word : array) {
-            abbr.append(word.charAt(0));
+        for (String word : words) {
+            builder.append(String.valueOf(word.charAt(0)).toUpperCase());
         }
-
-        return abbr.toString().toUpperCase();
+        return builder.toString();
     }
 }

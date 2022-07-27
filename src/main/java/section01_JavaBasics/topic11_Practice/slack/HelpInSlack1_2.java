@@ -1,4 +1,4 @@
-package section01_JavaBasics.topic11_Practice;
+package section01_JavaBasics.topic11_Practice.slack;
 
 public class HelpInSlack1_2 {
     public static void main(String[] args) {

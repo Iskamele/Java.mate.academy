@@ -1,4 +1,4 @@
-package section01_JavaBasics.topic10_String.practice;
+package section01_JavaBasics.topic10_String.practiceMaster;
 
 public class DetectWerewolf {
     public static void main(String[] args) {
@@ -11,11 +11,7 @@ public class DetectWerewolf {
     }
 
     public static boolean isWerewolf(String target) {
-        StringBuilder reverce = new StringBuilder(target).reverse();
-        String answer = reverce.toString();
-        if (!answer.equals(target)) {
-            return false;
-        }
-        return true;
+        StringBuilder builder = new StringBuilder(target);
+        return target.equals(builder.reverse().toString());
     }
 }

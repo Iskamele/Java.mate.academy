@@ -9,7 +9,6 @@ public class GetSuccessRate {
     }
 
     public static double getSuccessRate(String statistic) {
-        // write your code belowe this line
         if (statistic.length() == 0){
             return 0.0;
         }
@@ -27,6 +26,5 @@ public class GetSuccessRate {
         }
 
         return understood / count;
-        // write your code above this line
     }
 }

@@ -1,4 +1,4 @@
-package section01_JavaBasics.topic08_Loops.practice;
+package section01_JavaBasics.topic08_Loops.practiceMaster;
 
 public class GetDrinksWithStep {
     public static void main(String[] args) {
@@ -9,12 +9,11 @@ public class GetDrinksWithStep {
     }
 
     public static int getDrinksWithStep(int guestNumber, int step) {
-        int answer = 0;
-
-        for (int i = 0; i < guestNumber; i += step) {
-            answer = answer + 1 + i;
+        int sum = 0;
+        for (int i = 1; 1 <= guestNumber; i += step) {
+            sum += i;
         }
-
-        return answer;
+        return sum;
     }
 }
+

@@ -7,9 +7,10 @@ public class DoublePower {
         int[] array = {45, 34, 56, 67};
         System.out.println(Arrays.toString(getDoublePower(array)));
     }
+
     public static int[] getDoublePower(int[] powers) {
-        for(int i = 0; i < powers.length; i++){
-            powers[i] = powers[i] *2;
+        for (int i = 0; i < powers.length; i++) {
+            powers[i] = powers[i] * 2;
         }
         return powers;
     }

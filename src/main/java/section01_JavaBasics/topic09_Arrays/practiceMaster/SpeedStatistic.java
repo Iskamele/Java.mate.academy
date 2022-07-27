@@ -1,4 +1,4 @@
-package section01_JavaBasics.topic09_Arrays.practice;
+package section01_JavaBasics.topic09_Arrays.practiceMaster;
 
 import java.util.Arrays;
 
@@ -20,32 +20,26 @@ public class SpeedStatistic {
     }
 
     public static int[] getSpeedStatistic(int[] results) {
-        int minSpeed = Integer.MAX_VALUE;
-        int maxSpeed = Integer.MIN_VALUE;
-        int arraySize = 2;
-
-        int[] answer = new int[arraySize];
-
-        if (results.length == 0) {
-            answer[0] = 0;
-            answer[1] = 0;
-            return answer;
+        if (results.length == 0){
+            return new int[2];
         }
 
-        for (int result : results) {
-            if (minSpeed > result) {
-                minSpeed = result;
+        int[] responce = new int[2];
+        int max = results[0];
+        int min = results[0];
+
+        for (int speed : results) {
+            if (speed > max) {
+                max = speed;
             }
-            if (maxSpeed < result) {
-                maxSpeed = result;
+            if (speed < min){
+                min = speed;
             }
         }
-        answer[0] = minSpeed;
-        if (results.length != 1) {
-            answer[1] = maxSpeed;
-        } else {
-            answer[1] = answer[0];
-        }
-        return answer;
+
+        responce[0] = min;
+        responce[1] = max;
+
+        return responce;
     }
 }
