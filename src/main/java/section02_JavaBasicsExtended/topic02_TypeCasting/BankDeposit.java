@@ -1,4 +1,4 @@
-package section02_JavaBasicsExtended.topic01_EnviromentSetup.practice;
+package section02_JavaBasicsExtended.topic02_TypeCasting;
 
 public class BankDeposit {
     public static void main(String[] args) {

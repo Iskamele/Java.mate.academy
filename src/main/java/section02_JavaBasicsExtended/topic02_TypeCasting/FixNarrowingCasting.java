@@ -1,4 +1,4 @@
-package section02_JavaBasicsExtended.topic01_EnviromentSetup.practice;
+package section02_JavaBasicsExtended.topic02_TypeCasting;
 
 public class FixNarrowingCasting {
     public static void main(String[] args) {
