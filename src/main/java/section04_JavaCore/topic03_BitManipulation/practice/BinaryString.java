@@ -1,4 +1,4 @@
-package section04_JavaCore.topic03_BitManipulation;
+package section04_JavaCore.topic03_BitManipulation.practice;
 
 public class BinaryString {
     public static void main(String[] args) {
@@ -15,9 +15,9 @@ public class BinaryString {
         int countFor = value;
 
         for (int i = 0; i < countFor && value != 0; i++) {
-            builder.insert(0,value % 2);
+            builder.append(value % 2);
             value /= 2;
         }
-        return countFor != 0 ? builder.toString() : "0";
+        return countFor != 0 ? builder.reverse().toString() : "0";
     }
 }

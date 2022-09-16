@@ -1,4 +1,4 @@
-package section04_JavaCore.topic03_BitManipulation;
+package section04_JavaCore.topic03_BitManipulation.practice;
 
 public class DoubledNumber {
     public static void main(String[] args) {
