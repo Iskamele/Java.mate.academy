@@ -1,4 +1,4 @@
-package section04_JavaCore.topic04_OOP.practice.Fifth_MethodOverloadingVsOverwriting;
+package section04_JavaCore.topic04_OOP.practice.Sixth_Polymorphism;
 
 public class Person {
     private int age;
