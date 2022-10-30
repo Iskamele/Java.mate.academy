@@ -1,4 +1,4 @@
-package section04_JavaCore.topic04_OOP.practice.MatrixDiagonalWithMentorsSolution;
+package section04_JavaCore.topic04_OOP.practice.MatrixDiagonal.MatrixDiagonalWithMentorsSolution;
 
 public class MatrixDiagonal {
     public int[] getDiagonal(int[][] matrix) {

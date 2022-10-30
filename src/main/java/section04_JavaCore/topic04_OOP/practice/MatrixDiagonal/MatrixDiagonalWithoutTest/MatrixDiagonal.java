@@ -1,4 +1,4 @@
-package section04_JavaCore.topic04_OOP.practice.MatrixDiagonalWithoutTest;
+package section04_JavaCore.topic04_OOP.practice.MatrixDiagonal.MatrixDiagonalWithoutTest;
 
 import java.util.Arrays;
 

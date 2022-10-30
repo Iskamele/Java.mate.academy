@@ -2,7 +2,7 @@ package JavaCore_OOP;
 
 import org.junit.Assert;
 import org.junit.Test;
-import section04_JavaCore.topic04_OOP.practice.MatrixDiagonalWithMentorsSolution.MatrixDiagonal;
+import section04_JavaCore.topic04_OOP.practice.MatrixDiagonal.MatrixDiagonalWithMentorsSolution.MatrixDiagonal;
 
 import java.util.Arrays;
 
