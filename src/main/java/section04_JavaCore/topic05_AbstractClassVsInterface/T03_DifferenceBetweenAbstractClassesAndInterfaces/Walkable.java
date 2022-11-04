@@ -1,0 +1,4 @@
+package section04_JavaCore.topic05_AbstractClassVsInterface.T03_DifferenceBetweenAbstractClassesAndInterfaces;
+
+public interface Walkable {
+}
