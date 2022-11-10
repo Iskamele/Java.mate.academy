@@ -1,0 +1,4 @@
+package section04_JavaCore.topic05_AbstractClassVsInterface.theory.T03_DifferenceBetweenAbstractClassesAndInterfaces;
+
+public class Main {
+}
