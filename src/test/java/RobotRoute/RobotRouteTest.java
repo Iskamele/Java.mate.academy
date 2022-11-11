@@ -2,8 +2,9 @@ package RobotRoute;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.awt.*;
+import section04_JavaCore.topic04_OOP.practice.RobotRoute.Direction;
+import section04_JavaCore.topic04_OOP.practice.RobotRoute.Robot;
+import section04_JavaCore.topic04_OOP.practice.RobotRoute.RobotRoute;
 
 public class RobotRouteTest {
   @Test
