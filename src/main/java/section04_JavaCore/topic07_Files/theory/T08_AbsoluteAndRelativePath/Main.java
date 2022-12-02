@@ -37,7 +37,7 @@ public class Main {
     }
 
     private static void listFilesForFolder(File folder) {
-        for(File fileEntry : folder.listFiles()){
+        for (File fileEntry : folder.listFiles()) {
             System.out.println("Is directory: "
                     + fileEntry.isDirectory()
                     + ". File name: "
