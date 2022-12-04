@@ -1,4 +1,4 @@
-package JavaCore_OOP;
+package JavaCore.topic04_OOP.MatrixDiagonal;
 
 import org.junit.Assert;
 import org.junit.Test;

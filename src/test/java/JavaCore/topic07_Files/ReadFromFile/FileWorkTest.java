@@ -1,4 +1,4 @@
-package JavaCore_ReadFromFile;
+package JavaCore.topic07_Files.ReadFromFile;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

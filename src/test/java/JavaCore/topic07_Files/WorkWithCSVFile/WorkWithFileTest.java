@@ -1,4 +1,4 @@
-package JavaCore_WorkWithCSVFile;
+package JavaCore.topic07_Files.WorkWithCSVFile;
 
 import org.junit.After;
 import org.junit.Assert;

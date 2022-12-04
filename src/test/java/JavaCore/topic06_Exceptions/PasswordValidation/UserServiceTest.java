@@ -1,4 +1,4 @@
-package JavaCore_PasswordValidation;
+package JavaCore.topic06_Exceptions.PasswordValidation;
 
 import org.junit.*;
 import section04_JavaCore.topic06_Exceptions.practice.PasswordValidation.PasswordValidationException;

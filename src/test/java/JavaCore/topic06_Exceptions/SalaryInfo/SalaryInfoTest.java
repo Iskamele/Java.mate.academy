@@ -1,4 +1,4 @@
-package JavaCore_SalaryInfo;
+package JavaCore.topic06_Exceptions.SalaryInfo;
 
 import org.junit.Assert;
 import org.junit.Test;

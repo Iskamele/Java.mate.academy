@@ -1,4 +1,4 @@
-package RobotRoute;
+package JavaCore.topic04_OOP.RobotRoute;
 
 import org.junit.Assert;
 import org.junit.Test;
