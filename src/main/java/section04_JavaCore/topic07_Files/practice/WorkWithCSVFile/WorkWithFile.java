@@ -1,4 +1,4 @@
-package core.basesyntax;
+package section04_JavaCore.topic07_Files.practice.WorkWithCSVFile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
