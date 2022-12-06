@@ -1,4 +1,4 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T06_ValidationInBuilder;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T06_ValidationInBuilder;
 
 public class CountryExample {
     public static void main(String[] args) {

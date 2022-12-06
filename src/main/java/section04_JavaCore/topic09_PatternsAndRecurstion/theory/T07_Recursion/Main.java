@@ -1,4 +1,4 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T07_Recursion;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T07_Recursion;
 
 public class Main {
     public static void main(String[] args) {

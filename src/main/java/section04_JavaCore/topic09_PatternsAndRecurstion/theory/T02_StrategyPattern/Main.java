@@ -1,7 +1,7 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T02_StrategyPattern;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T02_StrategyPattern;
 
-import section04_JavaCore.topic09_PatternsAndRecurstion.T02_StrategyPattern.service.RouteService;
-import section04_JavaCore.topic09_PatternsAndRecurstion.T02_StrategyPattern.service.RouteStrategy;
+import section04_JavaCore.topic09_PatternsAndRecurstion.theory.T02_StrategyPattern.service.RouteService;
+import section04_JavaCore.topic09_PatternsAndRecurstion.theory.T02_StrategyPattern.service.RouteStrategy;
 
 public class Main {
     public static void main(String[] args) {

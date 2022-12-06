@@ -1,4 +1,4 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T05_BuilderUsageExample;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T05_BuilderUsageExample;
 
 public class CountryExample {
     public static void main(String[] args) {

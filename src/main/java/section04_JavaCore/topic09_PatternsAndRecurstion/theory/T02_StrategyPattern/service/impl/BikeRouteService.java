@@ -1,6 +1,6 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T02_StrategyPattern.service.impl;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T02_StrategyPattern.service.impl;
 
-import section04_JavaCore.topic09_PatternsAndRecurstion.T02_StrategyPattern.service.RouteService;
+import section04_JavaCore.topic09_PatternsAndRecurstion.theory.T02_StrategyPattern.service.RouteService;
 
 public class BikeRouteService implements RouteService {
 

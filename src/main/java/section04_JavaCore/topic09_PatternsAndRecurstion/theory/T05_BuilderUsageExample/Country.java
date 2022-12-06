@@ -1,4 +1,4 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T06_ValidationInBuilder;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T05_BuilderUsageExample;
 
 public class Country {
     private String name;
@@ -42,10 +42,7 @@ public class Country {
             return this;
         }
 
-        public Country build(){
-        if (this.population <= 0) {
-            throw new RuntimeException("Can't create County object. Population cannot be less than 0");
-        }
+        public Country build() {
             return new Country(this);
         }
     }

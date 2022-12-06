@@ -1,4 +1,4 @@
-package section04_JavaCore.topic09_PatternsAndRecurstion.T03_StaticFabricMethod;
+package section04_JavaCore.topic09_PatternsAndRecurstion.theory.T03_StaticFabricMethod;
 
 public class User {
     String name;
