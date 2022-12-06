@@ -1,0 +1,63 @@
+package section04_JavaCore.topic08_EqualsHashcodeAndClone.theory.T03_EqualsImprovement.ExplicitClassCheck.model;
+
+public class User {
+    private String name;
+    private int age;
+    private String inn;
+
+    public User(String name, int age, String inn) {
+        this.name = name;
+        this.age = age;
+        this.inn = inn;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getInn() {
+        return inn;
+    }
+
+    public void setInn(String inn) {
+        this.inn = inn;
+    }
+
+    @Override
+    public boolean equals(Object user) {
+        // Rules:
+        // 1. Reflection: check the object is the same
+        if (user == this) {
+            return true;
+        }
+        // 2. Null check
+        if (user == null) {
+            return false;
+        }
+        // 3. Symmetric : if a.equals(b) is true then b.equals(a) must be true.
+        // 4. Transitive : if a.equals(b) is true and b.equals(c) is true then c.equals(a) must be true.
+        // 5. Consistent : multiple invocations of equals() method must return the same
+        // value until any of properties are modified.
+
+        // Рекомендованная конструкция для сравнения
+        if (user.getClass().equals(User.class)) {
+            User current = (User) user;
+            return this.name.equals(current.name)
+                    && this.age == current.age
+                    && this.inn.equals(current.inn);
+        }
+        return false;
+    }
+}
