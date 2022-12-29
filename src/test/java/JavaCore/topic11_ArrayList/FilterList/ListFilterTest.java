@@ -1,4 +1,4 @@
-package JavaCore.typic11_ArrayList.FilterList;
+package JavaCore.topic11_ArrayList.FilterList;
 
 import org.junit.Assert;
 import org.junit.Test;

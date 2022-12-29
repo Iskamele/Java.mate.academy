@@ -1,4 +1,4 @@
-package JavaCore.typic11_ArrayList.ElementsSum;
+package JavaCore.topic11_ArrayList.ElementsSum;
 
 import org.junit.Assert;
 import org.junit.Test;
