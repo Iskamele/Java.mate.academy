@@ -42,7 +42,6 @@ public class Main {
         danBrownBooks.add(theLostSymbol);
         danBrownBooks.add(deceptionPoint);
 
-
         Map<Author, List<Book>> hashMap = new HashMap<>();
 
         hashMap.put(stephenKing, stephenKingBooks);
