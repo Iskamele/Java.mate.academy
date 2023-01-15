@@ -1,4 +1,4 @@
-package JavaCore.typic12_PECS.PECS.service;
+package JavaCore.topic12_PECS.PECS.service;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
