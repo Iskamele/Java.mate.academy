@@ -1,5 +1,5 @@
-What is Immutable class
-Mutable objects and HashMap
-How to write immutable class
-Why do we need to make immutable class final
-Deep copy of a collection
+Get random color
+Решение ментора
+Compare engine volumes
+Find auto type
+Check electric engine
