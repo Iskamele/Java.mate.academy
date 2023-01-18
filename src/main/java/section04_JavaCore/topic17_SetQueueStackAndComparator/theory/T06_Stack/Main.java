@@ -12,8 +12,9 @@ public class Main {
         plates.add("plate 2");
         plates.add("plate 3");
         plates.add("plate 4");
-        plates.add(1, "plate 5");
+
         // Разница между add и push
+        plates.add(1, "plate 5");
         plates.push("plate 6");
         System.out.println(plates);
         System.out.println();
