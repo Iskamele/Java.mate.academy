@@ -1,8 +1,8 @@
-package section04_JavaCore.topic17_SetQueueStackAndComparator.theory.T03_ComparatorVsComparable;
+package section04_JavaCore.topic17_SetQueueStackAndComparator.theory.T03_ComparatorVsComparable.Comparator;
 
 import java.util.Objects;
 
-public class User implements Comparable<User> {
+public class User {
     private String name;
     private int age;
 
@@ -46,14 +46,5 @@ public class User implements Comparable<User> {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
-    }
-
-    @Override
-    public int compareTo(User user) {
-        int namesCompared = name.compareTo(user.name);
-        if (namesCompared!=0){
-            return namesCompared;
-        }
-        return Integer.compare(age, user.age);
     }
 }

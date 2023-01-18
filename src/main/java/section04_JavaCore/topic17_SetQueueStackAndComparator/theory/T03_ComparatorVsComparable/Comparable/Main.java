@@ -1,4 +1,4 @@
-package section04_JavaCore.topic17_SetQueueStackAndComparator.theory.T03_ComparatorVsComparable;
+package section04_JavaCore.topic17_SetQueueStackAndComparator.theory.T03_ComparatorVsComparable.Comparable;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -6,7 +6,7 @@ import java.util.TreeSet;
 public class Main {
 
     public static void main(String[] args) {
-        // TreeSet
+        // Comparable
 
         Set<Integer> numbers = new TreeSet<>();
         numbers.add(10);
