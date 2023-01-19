@@ -1,4 +1,4 @@
-package section04_JavaCore.topic17_SetQueueStackAndComparator.practice.Stack;
+package section04_JavaCore.topic17_SetQueueStackAndComparator.practice.Stack.Old;
 
 public class Main {
 
