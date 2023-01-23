@@ -1,6 +1,5 @@
 package JavaCore.topic18_JavaJUnit.practice.registrationValidation;
 
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -76,16 +75,16 @@ public class ValidationTest {
         }
 
         assertEquals(expectedStorageSize, Storage.people.size(),
-                "Test failed! The size isn't correct. Expected " + expectedStorageSize + " but was " + Storage.people.size());
+                "Test failed! The size of the storage isn't correct. Expected " + expectedStorageSize + " but was " + Storage.people.size());
 
         assertTrue(actual.contains(new User("bob", "bobPassword27", 27)),
-                "Test failed! Хранилище должно содержать пользователя с логином bob");
+                "Test failed! The storage must contain a user with login: bob");
         assertTrue(actual.contains(new User("alice96", "qwerty", 21)),
-                "Test failed! Хранилище должно содержать пользователя с логином alice96");
+                "Test failed! The storage must contain a user with login: alice96");
         assertTrue(actual.contains(new User("josh_goldberg", "sh43u#Idsh", 18)),
-                "Test failed! Хранилище должно содержать пользователя с логином josh_goldberg");
+                "Test failed! The storage must contain a user with login: josh_goldberg");
         assertTrue(actual.contains(new User("marku$", "markus5", 60)),
-                "Test failed! Хранилище должно содержать пользователя с логином marku$");
+                "Test failed! The storage must contain a user with login: marku$");
     }
 
     @Test
@@ -93,7 +92,7 @@ public class ValidationTest {
         assertThrows(RegistrationException.class, () -> {
                     registrationService.register(null);
                 },
-                "Тест провален! Метод должен пробрасывать ошибку, если пользователь == null" + "\n");
+                "Test failed! The method should throw an exception if the user == null" + "\n");
     }
 
     @Test
@@ -105,28 +104,28 @@ public class ValidationTest {
 
         assertThrows(RegistrationException.class, () -> {
             registrationService.register(bob);
-        }, "Ваш метод должен пробрасывать ошибку, если логин уже занят!" + "\n");
+        }, "Test failed! The method should throw an exception if the login are exist!" + "\n");
     }
 
     @Test
     void registerInvalidAge_NotOk() {
         assertThrows(RegistrationException.class, () -> {
             registrationService.register(new User("steve", "steveLongLongPasswordOfCourse", 15));
-        }, "Ваш метод должен пробрасывать ошибку, если возраст пользователя не соответствует требованиям!" + "\n");
+        }, "Test failed! The method should throw an exception if the user's age does not meet the requirements!" + "\n");
     }
 
     @Test
     void registerInvalidPasswordLength_NotOk() {
         assertThrows(RegistrationException.class, () -> {
             registrationService.register(new User("steve", "short", 25));
-        }, "Ваш метод должен пробрасывать ошибку, если длина пароля не соответствует требованиям!" + "\n");
+        }, "Test failed! The method should throw an exception if the password length does not meet the requirements!" + "\n");
     }
 
     @Test
     void registerNullPassword_NotOk() {
         assertThrows(RegistrationException.class, () -> {
             registrationService.register(new User("steve", null, 25));
-        }, "Ваш метод должен пробрасывать ошибку, если пароль == null!" + "\n");
+        }, "Test failed! The method should throw an exception if password == null!" + "\n");
     }
 
     @Test
@@ -135,7 +134,7 @@ public class ValidationTest {
             registrationService.register(user);
         }
         assertEquals(expectedStorageSize, Storage.people.size(),
-                "Test failed! The size isn't correct. Expected " + expectedStorageSize + " but was " + Storage.people.size());
+                "The size of the storage isn't correct. Expected " + expectedStorageSize + " but was " + Storage.people.size());
 
         User actualBobUser = storageDaoImpl.get(bob.getLogin());
         User actualAliceUser = storageDaoImpl.get(alice.getLogin());
@@ -161,7 +160,7 @@ public class ValidationTest {
         assertThrows(RegistrationException.class, () -> {
                     registrationService.register(new User(null, "pasdasd325", 52));
                 },
-                "Тест провален! Метод должен пробрасывать ошибку, если логин == null!" + "\n");
+                "Test failed! The method should throw an exception if login == null!" + "\n");
     }
 
     @Test
@@ -169,7 +168,7 @@ public class ValidationTest {
         assertThrows(RegistrationException.class, () -> {
                     registrationService.register(new User("steve", "pasdas4d325", null));
                 },
-                "Тест провален! Метод должен пробрасывать ошибку, если возраст == null!" + "\n");
+                "Test failed! The method should throw an exception if age == null!" + "\n");
     }
 
     @Test
@@ -178,13 +177,13 @@ public class ValidationTest {
             registrationService.register(user);
         }
         assertNull(storageDaoImpl.get(null),
-                "Test failed! Метод должен вернуть null");
+                "Test failed! The method must return null!"); // Хотя Немчинский через раз повторяет, что методы не должны возвращать null.
     }
 
     @Test
     void getByNonExistUser() {
         assertNull(storageDaoImpl.get(alice.getLogin()),
-                "Test failed! Метод должен был вернуть null при несуществующем ключе " + alice.getLogin());
+                "Test failed! The method should have returned null with a non-existent login! " + alice.getLogin());
     }
 
     @Test
@@ -192,7 +191,7 @@ public class ValidationTest {
         assertThrows(RegistrationException.class, () -> {
                     registrationService.register(new User("steve", "pasdas4d325", -16));
                 },
-                "Тест провален! Метод должен пробрасывать ошибку, если возраст является негативным числом!" + "\n");
+                "Test failed! The method should throw an exception if age is a negative number!" + "\n");
     }
 
     @Test
@@ -202,6 +201,6 @@ public class ValidationTest {
         registrationService.register(alice);
         long aliceIndex = alice.getId();
         assertNotEquals(bobIndex, aliceIndex,
-                "Тест провален! Индекс должен меняться (в нашем случае инкрементироваться) при добавлении регистрации пользователей!" + "\n");
+                "Test failed! The index must increment when user registrations!" + "\n");
     }
 }
