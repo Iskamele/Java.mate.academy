@@ -1,9 +1,9 @@
 package section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.service;
 
-import core.basesyntax.dao.StorageDao;
-import core.basesyntax.dao.StorageDaoImpl;
-import core.basesyntax.exceptions.RegistrationException;
-import core.basesyntax.model.User;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.dao.StorageDao;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.dao.StorageDaoImpl;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.exceptions.RegistrationException;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model.User;
 
 public class RegistrationServiceImpl implements RegistrationService {
     private final StorageDao storageDao = new StorageDaoImpl();

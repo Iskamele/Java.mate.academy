@@ -1,6 +1,7 @@
 package section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.db;
 
-import core.basesyntax.model.User;
+
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

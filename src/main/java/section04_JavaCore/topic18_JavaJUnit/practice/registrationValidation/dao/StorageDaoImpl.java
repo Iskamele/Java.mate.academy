@@ -1,7 +1,7 @@
 package section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.dao;
 
-import core.basesyntax.db.Storage;
-import core.basesyntax.model.User;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.db.Storage;
+import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model.User;
 
 public class StorageDaoImpl implements StorageDao {
     private static Long index = 0L;
