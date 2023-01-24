@@ -1,22 +1,24 @@
 package JavaCore.topic18_JavaJUnit.practice.registrationValidation;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.dao.StorageDaoImpl;
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.db.Storage;
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.exceptions.RegistrationException;
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model.User;
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.service.RegistrationServiceImpl;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class ValidationTest {
@@ -91,9 +93,7 @@ public class ValidationTest {
 
     @Test
     void registerNullUser_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-                    registrationService.register(null);
-                },
+        assertThrows(RegistrationException.class, () -> registrationService.register(null),
                 "Test failed! The method should throw an exception if the user == null" + "\n");
     }
 
@@ -104,30 +104,26 @@ public class ValidationTest {
         assertEquals(2, Storage.people.size(),
                 "Test failed! The size isn't correct. Expected " + 2 + " but was " + Storage.people.size());
 
-        assertThrows(RegistrationException.class, () -> {
-            registrationService.register(bob);
-        }, "Test failed! The method should throw an exception if the login are exist!" + "\n");
+        assertThrows(RegistrationException.class, () -> registrationService.register(bob),
+                "Test failed! The method should throw an exception if the login are exist!" + "\n");
     }
 
     @Test
     void registerInvalidAge_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-            registrationService.register(new User("steve", "steveLongLongPasswordOfCourse", 15));
-        }, "Test failed! The method should throw an exception if the user's age does not meet the requirements!" + "\n");
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "steveLongLongPasswordOfCourse", 15)),
+                "Test failed! The method should throw an exception if the user's age does not meet the requirements!" + "\n");
     }
 
     @Test
     void registerInvalidPasswordLength_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-            registrationService.register(new User("steve", "short", 25));
-        }, "Test failed! The method should throw an exception if the password length does not meet the requirements!" + "\n");
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "short", 25)),
+                "Test failed! The method should throw an exception if the password length does not meet the requirements!" + "\n");
     }
 
     @Test
     void registerNullPassword_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-            registrationService.register(new User("steve", null, 25));
-        }, "Test failed! The method should throw an exception if password == null!" + "\n");
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", null, 25)),
+                "Test failed! The method should throw an exception if password == null!" + "\n");
     }
 
     @Test
@@ -159,17 +155,13 @@ public class ValidationTest {
 
     @Test
     public void registerNullLogin_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-                    registrationService.register(new User(null, "pasdasd325", 52));
-                },
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User(null, "pasdasd325", 52)),
                 "Test failed! The method should throw an exception if login == null!" + "\n");
     }
 
     @Test
     public void registerNullAge_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-                    registrationService.register(new User("steve", "pasdas4d325", null));
-                },
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "pasdas4d325", null)),
                 "Test failed! The method should throw an exception if age == null!" + "\n");
     }
 
@@ -190,9 +182,7 @@ public class ValidationTest {
 
     @Test
     void registerNegativeAge_NotOk() {
-        assertThrows(RegistrationException.class, () -> {
-                    registrationService.register(new User("steve", "pasdas4d325", -16));
-                },
+        assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "pasdas4d325", -16)),
                 "Test failed! The method should throw an exception if age is a negative number!" + "\n");
     }
 
