@@ -30,6 +30,8 @@ public class ValidationTest {
     private static final User john = new User("josh_goldberg", "sh43u#Idsh", 18);
     private static final User mark = new User("marku$", "markus5", 60);
 
+    private static final User secondBob = new User("bob", "bobPassword27", 27);
+
     @BeforeAll
     static void beforeAll() {
         registrationService = new RegistrationServiceImpl();
@@ -202,5 +204,43 @@ public class ValidationTest {
         long aliceIndex = alice.getId();
         assertNotEquals(bobIndex, aliceIndex,
                 "Test failed! The index must increment when user registrations!" + "\n");
+    }
+
+    @Test
+    void usersIsEquals_Ok() {
+        assertEquals(bob, secondBob,
+                "User objects do not equal. The equals() method doesn't work correctly!");
+    }
+
+    @Test
+    void usersHashCodeIsEquals_Ok() {
+        assertEquals(bob.hashCode(), secondBob.hashCode(), "Users' hashCode does not equal. The hashCode() method doesn't work correctly!");
+    }
+
+    @Test
+    void userSetters_Ok() {
+        User tony = new User("tonyS", "sta1970rk", 50);
+        tony.setId(10L);
+
+        long oldId = tony.getId();
+        String oldLogin = tony.getLogin();
+        String oldPassword = tony.getPassword();
+        int oldAge = tony.getAge();
+
+        tony.setId(22L);
+        assertNotEquals(oldId, tony.getId(),
+                "Fields don't have to be equal. setId() method works incorrectly!" + '\n');
+
+        tony.setLogin("STARK");
+        assertNotEquals(oldLogin, tony.getLogin(),
+                "Fields don't have to be equal. setLogin() method works incorrectly!" + '\n');
+
+        tony.setPassword("qwertyasdfgzxcvb");
+        assertNotEquals(oldPassword, tony.getPassword(),
+                "Fields don't have to be equal. setPassword() method works incorrectly!" + '\n');
+
+        tony.setAge(51);
+        assertNotEquals(oldAge, tony.getAge(),
+                "Fields don't have to be equal. setAge() method works incorrectly!" + '\n');
     }
 }
