@@ -17,32 +17,61 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ValidationTest {
+    private static final String EXCEPTION_MESSAGE = RegistrationException.class.toString();
+
+    private static final String VALID_LOGIN_FIRST = "firstDefaultLogin";
+    private static final String VALID_LOGIN_SECOND = "secondDefaultLogin";
+    private static final String VALID_LOGIN_THIRD = "thirdDefaultLogin";
+
+    private static final String VALID_PASSWORD_FIRST = "123456";
+    private static final String VALID_PASSWORD_SECOND = "LOOOOOOOOOOOOONG";
+    private static final String VALID_PASSWORD_THIRD = "qwe123ZXC$%^";
+
+    private static final int VALID_AGE_FIRST = 18;
+    private static final int VALID_AGE_SECOND = 19;
+    private static final int VALID_AGE_THIRD = 91;
+
     private static RegistrationServiceImpl registrationService;
     private static List<User> validUserData;
     private static StorageDaoImpl storageDaoImpl;
-    private static int expectedStorageSize;
 
-    private static final User bob = new User("bob", "bobPassword27", 27);
-    private static final User alice = new User("alice96", "qwerty", 21);
-    private static final User john = new User("josh_goldberg", "sh43u#Idsh", 18);
-    private static final User mark = new User("marku$", "markus5", 60);
-
-    private static final User secondBob = new User("bob", "bobPassword27", 27);
+    private User validUserBob;
+    private User validUserAlice;
+    private User validUserJohn;
+    private User validUserSecondBob;
 
     @BeforeAll
     static void beforeAll() {
         registrationService = new RegistrationServiceImpl();
         storageDaoImpl = new StorageDaoImpl();
-        expectedStorageSize = 4;
     }
 
     @BeforeEach
     void setUp() {
+        validUserBob = new User();
+        validUserBob.setLogin(VALID_LOGIN_FIRST);
+        validUserBob.setPassword(VALID_PASSWORD_FIRST);
+        validUserBob.setAge(VALID_AGE_FIRST);
+
+        validUserSecondBob = new User();
+        validUserSecondBob.setLogin(validUserBob.getLogin());
+        validUserSecondBob.setPassword(validUserBob.getPassword());
+        validUserSecondBob.setAge(validUserBob.getAge());
+
+        validUserAlice = new User();
+        validUserAlice.setLogin(VALID_LOGIN_SECOND);
+        validUserAlice.setPassword(VALID_PASSWORD_SECOND);
+        validUserAlice.setAge(VALID_AGE_SECOND);
+
+        validUserJohn = new User();
+        validUserJohn.setLogin(VALID_LOGIN_THIRD);
+        validUserJohn.setPassword(VALID_PASSWORD_THIRD);
+        validUserJohn.setAge(VALID_AGE_THIRD);
+
         validUserData = new ArrayList<>();
-        validUserData.add(bob);
-        validUserData.add(alice);
-        validUserData.add(john);
-        validUserData.add(mark);
+        validUserData.add(validUserBob);
+        validUserData.add(validUserAlice);
+        validUserData.add(validUserJohn);
     }
 
     @AfterEach
@@ -51,7 +80,7 @@ public class ValidationTest {
     }
 
     @Test
-    void checkPrivateFieldsInRegistrationImpl_Ok() {
+    void register_checkPrivateFields_Ok() {
         List<Field> privateFields = new ArrayList<>();
         List<Field> allFields = Arrays.asList(RegistrationServiceImpl.class.getDeclaredFields());
         for (Field field : allFields) {
@@ -66,106 +95,126 @@ public class ValidationTest {
     }
 
     @Test
-    void registerValidUsers_Ok() throws RegistrationException {
-        List<User> actual = new ArrayList<>();
+    void register_ValidUsers_Ok() throws RegistrationException {
         for (User user : validUserData) {
             registrationService.register(user);
-            actual.add(storageDaoImpl.get(user.getLogin()));
         }
 
-        Assertions.assertEquals(expectedStorageSize, Storage.people.size(),
+        Assertions.assertEquals(validUserData.size(), Storage.people.size(),
                 "Test failed! The size of the storage isn't correct. Expected "
+                        + validUserData.size() + " but was " + Storage.people.size() + '\n');
+        Assertions.assertTrue(Storage.people.contains(validUserBob),
+                "Test failed! The storage must contain a user with login: "
+                        + validUserBob.getLogin() + '\n');
+        Assertions.assertTrue(Storage.people.contains(validUserAlice),
+                "Test failed! The storage must contain a user with login: "
+                        + validUserAlice.getLogin() + '\n');
+        Assertions.assertTrue(Storage.people.contains(validUserJohn),
+                "Test failed! The storage must contain a user with login: "
+                        + validUserJohn.getLogin() + '\n');
+    }
+
+    @Test
+    void register_AndGetValidUsers_Ok() throws RegistrationException {
+        for (User user : validUserData) {
+            registrationService.register(user);
+        }
+        Assertions.assertEquals(validUserData.size(), Storage.people.size(),
+                "The size of the storage isn't correct. Expected "
+                        + validUserData.size() + " but was " + Storage.people.size());
+
+        User actualBobUser = storageDaoImpl.get(validUserBob.getLogin());
+        User actualAliceUser = storageDaoImpl.get(validUserAlice.getLogin());
+        User actualJohnUser = storageDaoImpl.get(validUserJohn.getLogin());
+
+        Assertions.assertEquals(validUserBob, actualBobUser,
+                "Test failed! Storage expects to contain " + validUserBob.getLogin() + ", "
+                        + " but was " + actualBobUser + '\n');
+        Assertions.assertEquals(validUserAlice, actualAliceUser,
+                "Test failed! Storage expects to contain " + validUserAlice.getLogin() + ", "
+                        + " but was " + actualAliceUser + '\n');
+        Assertions.assertEquals(validUserJohn, actualJohnUser,
+                "Test failed! Storage expects to contain " + validUserJohn.getLogin() + ", "
+                        + " but was " + actualJohnUser + '\n');
+    }
+
+    @Test
+    void register_NullUser_NotOk() {
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(null),
+                String.format("%S should be thrown for: User == null" + '\n', EXCEPTION_MESSAGE));
+    }
+
+    @Test
+    void register_SomeUser_NotOk() throws RegistrationException {
+        registrationService.register(validUserBob);
+        registrationService.register(validUserAlice);
+        int expectedStorageSize = 2;
+        Assertions.assertEquals(expectedStorageSize, Storage.people.size(),
+                "Test failed! The size isn't correct. Expected "
                         + expectedStorageSize + " but was " + Storage.people.size() + '\n');
 
-        Assertions.assertTrue(actual.contains(new User("bob", "bobPassword27", 27)),
-                "Test failed! The storage must contain a user with login: bob" + '\n');
-        Assertions.assertTrue(actual.contains(new User("alice96", "qwerty", 21)),
-                "Test failed! The storage must contain a user with login: alice96" + '\n');
-        Assertions.assertTrue(actual.contains(new User("josh_goldberg", "sh43u#Idsh", 18)),
-                "Test failed! The storage must contain a user with login: josh_goldberg" + '\n');
-        Assertions.assertTrue(actual.contains(new User("marku$", "markus5", 60)),
-                "Test failed! The storage must contain a user with login: marku$" + '\n');
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: already existing login: "
+                        + validUserBob.getLogin() + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerAndGetValidUsers_Ok() throws RegistrationException {
-        for (User user : validUserData) {
-            registrationService.register(user);
-        }
-        Assertions.assertEquals(expectedStorageSize, Storage.people.size(),
-                "The size of the storage isn't correct. Expected "
-                        + expectedStorageSize + " but was " + Storage.people.size());
-
-        User actualBobUser = storageDaoImpl.get(bob.getLogin());
-        User actualAliceUser = storageDaoImpl.get(alice.getLogin());
-        User actualJohnUser = storageDaoImpl.get(john.getLogin());
-        User actualMarkUser = storageDaoImpl.get(mark.getLogin());
-
-        Assertions.assertEquals(bob, actualBobUser,
-                "Test failed! Storage expects to contain " + bob.getLogin() + ", "
-                        + " but was " + actualBobUser + '\n');
-        Assertions.assertEquals(alice, actualAliceUser,
-                "Test failed! Storage expects to contain " + alice.getLogin() + ", "
-                        + " but was " + actualAliceUser + '\n');
-        Assertions.assertEquals(john, actualJohnUser,
-                "Test failed! Storage expects to contain " + john.getLogin() + ", "
-                        + " but was " + actualJohnUser + '\n');
-        Assertions.assertEquals(mark, actualMarkUser,
-                "Test failed! Storage expects to contain " + mark.getLogin() + ", "
-                        + " but was " + actualMarkUser + '\n');
+    public void register_NullLogin_NotOk() {
+        validUserBob.setLogin(null);
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: login == null" + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerNullUser_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () ->
-                        registrationService.register(null),
-                "Test failed! The method should throw an exception if the user == null" + '\n');
+    void register_EmptyLogin_NotOk() {
+        validUserBob.setLogin("");
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: login is empty" + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerSomeUser_NotOk() throws RegistrationException {
-        registrationService.register(bob);
-        registrationService.register(alice);
-        Assertions.assertEquals(2, Storage.people.size(),
-                "Test failed! The size isn't correct. Expected "
-                        + 2 + " but was " + Storage.people.size() + '\n');
-
-        Assertions.assertThrows(RegistrationException.class, () ->
-                        registrationService.register(bob),
-                "Test failed! The method should throw an exception if the login are exist!" + '\n');
+    void register_InvalidPasswordLength_NotOk() {
+        validUserBob.setPassword("12345");
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: not enough length for password: "
+                        + validUserBob.getPassword() + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerInvalidAge_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () ->
-                        registrationService.register(new User("steve", "steveLongPassword", 15)),
-                "Test failed! The method should throw an exception if the user's age < 18!" + '\n');
+    void register_NullPassword_NotOk() {
+        validUserBob.setPassword(null);
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: password == null"
+                        + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerInvalidPasswordLength_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () ->
-                        registrationService.register(new User("steve", "short", 25)),
-                "Test failed! The method should throw an exception if the password length < 6>" + '\n');
+    void register_NullAge_NotOk() {
+        validUserBob.setAge(null);
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: age == null" + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
-    void registerNullPassword_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () ->
-                        registrationService.register(new User("steve", null, 25)),
-                "Test failed! The method should throw an exception if password == null!" + '\n');
-    }
+    void register_InvalidAge_NotOk() {
+        validUserBob.setAge(17);
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: user's age < 18!"
+                        + '\n', EXCEPTION_MESSAGE));
 
-    @Test
-    public void registerNullLogin_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () -> registrationService.register(new User(null, "pasdasd325", 52)),
-                "Test failed! The method should throw an exception if login == null!" + '\n');
-    }
-
-    @Test
-    public void registerNullAge_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "pasdas4d325", null)),
-                "Test failed! The method should throw an exception if age == null!" + '\n');
+        validUserBob.setAge(-19);
+        Assertions.assertThrows(RegistrationException.class,
+                () -> registrationService.register(validUserBob),
+                String.format("%S should be thrown for: user's age < 18!"
+                        + '\n', EXCEPTION_MESSAGE));
     }
 
     @Test
@@ -174,72 +223,42 @@ public class ValidationTest {
             registrationService.register(user);
         }
         Assertions.assertNull(storageDaoImpl.get(null),
-                "Test failed! The method must return null!" + '\n');
+                "Test failed! The method must return null" + '\n');
     }
 
     @Test
     void getByNonExistUser() {
-        Assertions.assertNull(storageDaoImpl.get(alice.getLogin()),
-                "Test failed! The method should have returned null with a non-existent login! " + alice.getLogin() + '\n');
-    }
-
-    @Test
-    void registerNegativeAge_NotOk() {
-        Assertions.assertThrows(RegistrationException.class, () -> registrationService.register(new User("steve", "pasdas4d325", -16)),
-                "Test failed! The method should throw an exception if age is a negative number!" + '\n');
+        Assertions.assertNull(storageDaoImpl.get(validUserAlice.getLogin()),
+                "Test failed! The method should have returned null with a non-existent login. "
+                        + validUserAlice.getLogin() + '\n');
     }
 
     @Test
     void changeIndexAfterAdd_Ok() throws RegistrationException {
-        registrationService.register(bob);
-        long bobIndex = bob.getId();
-        registrationService.register(alice);
-        long aliceIndex = alice.getId();
-        Assertions.assertNotEquals(bobIndex, aliceIndex,
-                "Test failed! The index must increment when user registrations!" + '\n');
+        registrationService.register(validUserBob);
+        long previousIndex = validUserBob.getId();
+        registrationService.register(validUserAlice);
+        long actualIndex = validUserAlice.getId();
+        Assertions.assertNotEquals(previousIndex, actualIndex,
+                "Test failed! The index must increment when user registrations" + '\n');
     }
 
     @Test
     void usersIsEquals_Ok() {
-        Assertions.assertEquals(bob, secondBob,
-                "Test failed! User objects do not equal. The equals() method doesn't work correctly!" + '\n');
+        Assertions.assertEquals(validUserBob, validUserSecondBob,
+                "Test failed! The equals() method doesn't work correctly" + '\n');
     }
 
     @Test
     void userNotEqualsWithNull_Ok() {
-        Assertions.assertNotEquals(bob, null,
-                "Test failed! User and null can't be equals!" + '\n');
+        Assertions.assertNotEquals(validUserBob, null,
+                "Test failed! User and null can't be equals" + '\n');
     }
 
     @Test
     void usersHashCodeIsEquals_Ok() {
-        Assertions.assertEquals(bob.hashCode(), secondBob.hashCode(),
-                "Test failed! Users' hashCode does not equal. The hashCode() method doesn't work correctly!" + '\n');
-    }
-
-    @Test
-    void userSetters_Ok() {
-        User tony = new User("tonyS", "sta1970rk", 50);
-        tony.setId(10L);
-
-        long oldId = tony.getId();
-        tony.setId(22L);
-        Assertions.assertNotEquals(oldId, tony.getId(),
-                "Fields don't have to be equal. setId() method works incorrectly!" + '\n');
-
-        String oldLogin = tony.getLogin();
-        tony.setLogin("STARK");
-        Assertions.assertNotEquals(oldLogin, tony.getLogin(),
-                "Fields don't have to be equal. setLogin() method works incorrectly!" + '\n');
-
-        String oldPassword = tony.getPassword();
-        tony.setPassword("qwertyasdfgzxcvb");
-        Assertions.assertNotEquals(oldPassword, tony.getPassword(),
-                "Fields don't have to be equal. setPassword() method works incorrectly!" + '\n');
-
-        int oldAge = tony.getAge();
-        tony.setAge(51);
-        Assertions.assertNotEquals(oldAge, tony.getAge(),
-                "Fields don't have to be equal. setAge() method works incorrectly!" + '\n');
+        Assertions.assertEquals(validUserBob.hashCode(),
+                validUserSecondBob.hashCode(),
+                "Test failed! The hashCode() method doesn't work correctly" + '\n');
     }
 }

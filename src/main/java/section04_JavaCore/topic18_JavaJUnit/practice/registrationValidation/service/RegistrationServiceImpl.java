@@ -6,29 +6,53 @@ import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.exce
 import section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model.User;
 
 public class RegistrationServiceImpl implements RegistrationService {
+    private static final int MIN_AGE = 18;
+    private static final int MIN_PASSWORD_LENGTH = 6;
     private final StorageDao storageDao = new StorageDaoImpl();
-    private final static int MIN_AGE = 18;
-    private final static int MIN_PASSWORD_LENGTH = 6;
 
     @Override
-    public User register(User user) throws RegistrationException {
+    public User register(User user) {
+        checkUser(user);
+        checkLogin(user);
+        checkPassword(user);
+        checkAge(user);
+        return storageDao.add(user);
+    }
+
+    private void checkUser(User user) {
         if (user == null) {
-            throw new RegistrationException("User can't be null.");
+            throw new RegistrationException("User can't be null!");
         }
+    }
+
+    private void checkLogin(User user) {
         if (user.getLogin() == null) {
-            throw new RegistrationException("Login can't be null.");
+            throw new RegistrationException("Login can't be null!");
+        }
+        if (user.getLogin().isEmpty()) {
+            throw new RegistrationException("Login can't be empty!");
         }
         if (storageDao.get(user.getLogin()) != null) {
-            if (storageDao.get(user.getLogin()).getLogin().equals(user.getLogin())) {
-                throw new RegistrationException("Login " + user.getLogin() + " are exist.");
-            }
+            throw new RegistrationException("Login " + user.getLogin() + " are exist!");
         }
-        if (user.getAge() == null || user.getAge() < MIN_AGE) {
-            throw new RegistrationException("Age must be 18+.");
+    }
+
+    private void checkPassword(User user) {
+        if (user.getPassword() == null) {
+            throw new RegistrationException("Password can't be null!");
         }
-        if (user.getPassword() == null || user.getPassword().length() < MIN_PASSWORD_LENGTH) {
-            throw new RegistrationException("Minimum password length must be 6 characters.");
+        if (user.getPassword().length() < MIN_PASSWORD_LENGTH) {
+            throw new RegistrationException("Password must be at least "
+                    + MIN_PASSWORD_LENGTH + " characters length!");
         }
-        return storageDao.add(user);
+    }
+
+    private void checkAge(User user) {
+        if (user.getAge() == null) {
+            throw new RegistrationException("Age can't be null!");
+        }
+        if (user.getAge() < MIN_AGE) {
+            throw new RegistrationException("Age must be at least " + MIN_AGE + "!");
+        }
     }
 }

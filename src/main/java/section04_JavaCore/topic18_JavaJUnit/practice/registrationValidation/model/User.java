@@ -1,16 +1,12 @@
 package section04_JavaCore.topic18_JavaJUnit.practice.registrationValidation.model;
 
+import java.util.Objects;
+
 public class User {
     private Long id;
     private String login;
     private String password;
     private Integer age;
-
-    public User(String login, String password, Integer age) {
-        this.login = login;
-        this.password = password;
-        this.age = age;
-    }
 
     public Long getId() {
         return id;
@@ -46,7 +42,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        /*if (this == o) {
+        if (this == o) {
             return true;
         }
         if (o == null || getClass() != o.getClass()) {
@@ -56,18 +52,10 @@ public class User {
         return Objects.equals(login, user.login)
                 && Objects.equals(password, user.password)
                 && Objects.equals(age, user.age);
-         */
-        return true;
     }
 
     @Override
     public int hashCode() {
-        //return Objects.hash(login, password, age);
-        return 1;
-    }
-
-    @Override
-    public String toString() {
-        return login;
+        return Objects.hash(login, password, age);
     }
 }
