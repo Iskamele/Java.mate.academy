@@ -8,7 +8,5 @@ public class Main {
         String[] names = new String[]{"Bob", "Alice"};
         Iterable<String> strings = new ArrayList<>(names);
         strings.printAll();
-
-
     }
 }

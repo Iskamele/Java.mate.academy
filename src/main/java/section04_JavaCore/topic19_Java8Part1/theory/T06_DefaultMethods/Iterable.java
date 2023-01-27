@@ -6,5 +6,6 @@ public interface Iterable<T> {
             System.out.println(t);
         }
     }
+
     T[] getAll();
 }
