@@ -1,0 +1,4 @@
+package section04_JavaCore.topic19_Java8Part1.theory.T14_WorkingWithExceptionsInFunctionalInterfaces;
+
+public class CheckedException extends Exception{
+}
