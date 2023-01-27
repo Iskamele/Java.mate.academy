@@ -11,7 +11,7 @@ public class Main {
         };
         test.print();
         System.out.println(Test.get());
-        // excample
+        // example
         Comparator.reverseOrder();
     }
 }
