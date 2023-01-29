@@ -1,7 +1,8 @@
-Implement the suitable functional interface and override its method that should take two `Integer` values that represent powers of the two engines, and return the difference between them as `Integer` as well.
+Implement the suitable functional interface and override its method that should take an `Engine` and determine whether it is of `EngineType.ELECTRIC`.
+
+The method should return `true` or `false`.
 
 #### [Try to avoid these common mistakes while solving task.](https://mate-academy.github.io/jv-program-common-mistakes/java-core/java-eight/functional-interfaces)
-
 
 ### Common mistakes[](https://mate-academy.github.io/jv-program-common-mistakes/java-core/java-eight/functional-interfaces#common-mistakes)
 
