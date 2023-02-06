@@ -11,8 +11,6 @@ import section04_JavaCore.topic19_Java8Part2.practice.StreamPractice.model.Perso
 import section04_JavaCore.topic19_Java8Part2.practice.StreamPractice.model.Cat;
 
 public class StreamPractice {
-    private final Predicate<Integer> isOdd = num -> num % 2 != 0;
-
     /**
      * Given list of strings where each element contains 1+ numbers:
      * input = {"5,30,100", "0,22,7", ...}
@@ -37,8 +35,8 @@ public class StreamPractice {
      */
     public Double getOddNumsAverage(List<Integer> numbers) {
         return IntStream.range(0, numbers.size())
-                .map(num -> isOdd.test(num) ? numbers.get(num) - 1 : numbers.get(num))
-                .filter(isOdd::test)
+                .map(num -> num % 2 != 0 ? numbers.get(num) - 1 : numbers.get(num))
+                .filter(num -> num % 2 != 0)
                 .average()
                 .orElseThrow();
     }
@@ -74,8 +72,12 @@ public class StreamPractice {
      */
     public List<Person> getWorkablePeople(int fromAge, int femaleToAge,
                                           int maleToAge, List<Person> peopleList) {
+        Predicate<Person> isWorkablePerson = person -> person.getAge() >= fromAge
+                && (person.getSex() == Person.Sex.MAN && person.getAge() <= maleToAge
+                || person.getSex() == Person.Sex.WOMAN && person.getAge() <= femaleToAge);
+
         return peopleList.stream()
-                .filter(person -> isWorkablePerson(fromAge, femaleToAge, maleToAge, person))
+                .filter(isWorkablePerson)
                 .collect(Collectors.toList());
     }
 
@@ -116,20 +118,5 @@ public class StreamPractice {
                 .map(Candidate::getName)
                 .sorted()
                 .collect(Collectors.toList());
-    }
-
-    private boolean isWorkablePerson(int fromAge, int femaleToAge,
-                                     int maleToAge, Person person) {
-        int age = person.getAge();
-        if (age < fromAge) {
-            return false;
-        }
-        if (person.getSex() == Person.Sex.MAN && age <= maleToAge) {
-            return true;
-        }
-        if (person.getSex() == Person.Sex.WOMAN && age <= femaleToAge) {
-            return true;
-        }
-        return false;
     }
 }
