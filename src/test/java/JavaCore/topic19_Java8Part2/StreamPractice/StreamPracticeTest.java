@@ -1,4 +1,4 @@
-package JavaCore.topic19_Java8Part2.practice.topic19_Java8Part2.StreamPractice;
+package JavaCore.topic19_Java8Part2.StreamPractice;
 
 import java.util.ArrayList;
 import java.util.Arrays;

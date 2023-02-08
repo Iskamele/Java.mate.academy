@@ -1,4 +1,4 @@
-package JavaCore.topic19_Java8Part2.practice.topic19_Java8Part2.StreamApiPartTwo;
+package JavaCore.topic19_Java8Part2.StreamApiPartTwo;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
