@@ -1,13 +1,6 @@
 package section04_JavaCore.topic19_Java8Part3.practice.DateTimeApi;
 
-import java.time.DateTimeException;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -29,21 +22,13 @@ public class DateTimeApi {
     private static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.now();
 
     public String todayDate(DateTimePart datePart) {
-        switch (datePart) {
-            case FULL -> {
-                return LOCAL_DATE_TIME.toLocalDate().toString();
-            }
-            case YEAR -> {
-                return String.valueOf(LOCAL_DATE_TIME.getYear());
-            }
-            case MONTH -> {
-                return String.valueOf(LOCAL_DATE_TIME.getMonth());
-            }
-            case DAY -> {
-                return String.valueOf(LOCAL_DATE_TIME.getDayOfMonth());
-            }
+        return switch (datePart) {
+            case FULL -> LOCAL_DATE_TIME.toLocalDate().toString();
+            case YEAR -> String.valueOf(LOCAL_DATE_TIME.getYear());
+            case MONTH -> String.valueOf(LOCAL_DATE_TIME.getMonth());
+            case DAY -> String.valueOf(LOCAL_DATE_TIME.getDayOfMonth());
             default -> throw new DateTimeException("No such data: " + datePart);
-        }
+        };
     }
 
     /**
