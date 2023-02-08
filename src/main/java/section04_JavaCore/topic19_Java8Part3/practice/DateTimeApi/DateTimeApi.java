@@ -7,6 +7,14 @@ import java.util.Arrays;
 import java.util.TimeZone;
 
 public class DateTimeApi {
+    private static final int YEAR_INDEX = 0;
+    private static final int MONTH_INDEX = 1;
+    private static final int DAY_INDEX = 2;
+    private static final String OFFSET_UA = "+02:00";
+    private static final DateTimeFormatter DATE_FORMATTER =
+            DateTimeFormatter.ofPattern("d MMM yyyy");
+    private static final DateTimeFormatter DATE_TIME_FORMATTER =
+            DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm");
 
     /**
      * Return the current date as a String depending on a query.
@@ -40,10 +48,10 @@ public class DateTimeApi {
      * Return LocalDate built from these elements. If Array contains more than 3 elements - throw DateTimeException.
      */
     public LocalDate getDate(Integer[] dateParams) {
-        if (dateParams.length > 2) {
-            return LocalDate.of(dateParams[0], dateParams[1], dateParams[2]);
+        if (dateParams.length != 3) {
+            throw new DateTimeException("Unexpected value: " + Arrays.toString(dateParams));
         }
-        throw new DateTimeException("Unexpected value: " + Arrays.toString(dateParams));
+        return LocalDate.of(dateParams[YEAR_INDEX], dateParams[MONTH_INDEX], dateParams[DAY_INDEX]);
     }
 
     /**
@@ -114,7 +122,7 @@ public class DateTimeApi {
      * OffsetDateTime is recommended to use for storing date values in a database.
      */
     public OffsetDateTime offsetDateTime(LocalDateTime localTime) {
-        return OffsetDateTime.of(localTime, ZoneOffset.of("+02:00"));
+        return OffsetDateTime.of(localTime, ZoneOffset.of(OFFSET_UA));
     }
 
     /**
@@ -122,7 +130,7 @@ public class DateTimeApi {
      * return LocalDate object built from this String.
      */
     public LocalDate parseDate(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+        return LocalDate.parse(date, DateTimeFormatter.BASIC_ISO_DATE);
     }
 
     /**
@@ -130,7 +138,7 @@ public class DateTimeApi {
      * return LocalDate object built from this String.
      */
     public LocalDate customParseDate(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern("d MMM yyyy"));
+        return LocalDate.parse(date, DATE_FORMATTER);
     }
 
     /**
@@ -140,6 +148,6 @@ public class DateTimeApi {
      * Example: "01 January 2000 18:00".
      */
     public String formatDate(LocalDateTime dateTime) {
-        return dateTime.format(DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm"));
+        return dateTime.format(DATE_TIME_FORMATTER);
     }
 }
