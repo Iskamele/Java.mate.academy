@@ -21,7 +21,6 @@ public class DateTimeApi {
      **/
     private static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.now();
 
-
     public String todayDate(DateTimePart datePart) {
         switch (datePart) {
             case FULL -> {
