@@ -15,7 +15,11 @@ public class Main {
             int single = 1;
             int tenths = 0;
             while (value != null) {
-                String[] words = value.split(" ");
+                if (value.isEmpty()) {
+                    value = reader.readLine();
+                    continue;
+                }
+                String[] words = value.replaceAll("[^a-zA-Z ]", "").split(" ");
                 builder.append("T")
                         .append(tenths)
                         .append(single)

@@ -1,5 +1,16 @@
-Get random color
-Решение ментора
-Compare engine volumes
-Find auto type
-Check electric engine
+SOLID Intro
+
+
+SOLID: SRP
+
+
+SOLID: OCP
+
+
+SOLID: LSP
+
+
+SOLID: ISP
+
+
+SOLID: DIP
