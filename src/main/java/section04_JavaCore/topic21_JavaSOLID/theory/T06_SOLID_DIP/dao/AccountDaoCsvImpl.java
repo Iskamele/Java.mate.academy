@@ -26,8 +26,8 @@ public class AccountDaoCsvImpl implements AccountDao {
         }
         return accounts.stream()
                 .filter(line -> line.startsWith(accountNumber))
-                        .map(this::getFromCsvRow)
-                        .findFirst().get();
+                .map(this::getFromCsvRow)
+                .findFirst().get();
     }
 
     @Override
