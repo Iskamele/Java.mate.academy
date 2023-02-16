@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FruitTransaction {
-    private Operation operation;
     private final int OPERATION_POSITION = 0;
     private final int FRUIT_POSITION = 1;
     private final int QUANTITY_POSITION = 2;
@@ -75,27 +74,5 @@ public class FruitTransaction {
         } catch (IOException e) {
             throw new RuntimeException("Can't write data to file " + toFileName, e);
         }
-    }
-
-    private void Operation(String operation) {
-        switch (operation) {
-            case "b":
-                this.operation = Operation.BALANCE;
-            case "s":
-                this.operation = Operation.SUPPLY;
-            case "p":
-                this.operation = Operation.PURCHASE;
-            case "r":
-                this.operation = Operation.RETURN;
-            default:
-                throw new RuntimeException("невалидная операция");
-        }
-    }
-
-    private enum Operation {
-        BALANCE,
-        SUPPLY,
-        PURCHASE,
-        RETURN;
     }
 }
