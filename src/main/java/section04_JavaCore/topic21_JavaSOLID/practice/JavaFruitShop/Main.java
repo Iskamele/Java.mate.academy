@@ -1,27 +1,29 @@
 package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop;
 
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvFileValidationImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvTransactionsParserImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FileReaderServiceImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FileWriterServiceImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FruitShopServiceImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.ReportInCsvFileServiceImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.BalanceOperation;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.OperationHandler;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.PurchaseOperation;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.ReturnOperation;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.SupplyOperation;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationStrategy.OperationStrategy;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvTransactionsParser;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileReaderService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileValidation;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileWriterService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FruitShopService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportInFileService;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvFileReaderServiceImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvFileWriterServiceImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvReportServiceImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvTransactionsParserParserImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FruitShopServiceImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.BalanceOperation;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.PurchaseOperation;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.ReturnOperation;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.SupplyOperation;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationStrategy.OperationHandler;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationStrategy.OperationStrategy;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvFileReaderService;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvFileWriterService;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvReportService;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvTransactionsParser;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FruitShopService;
 
 public class Main {
     private static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.now();
@@ -37,10 +39,13 @@ public class Main {
         operationHandlerMap.put(FruitTransaction.Operation.PURCHASE, new PurchaseOperation());
         operationHandlerMap.put(FruitTransaction.Operation.RETURN, new ReturnOperation());
 
-        CsvFileReaderService csvFileReaderService = new CsvFileReaderServiceImpl();
-        List<String> processedData = csvFileReaderService.readCsvFile(FROM_FILE_PATH);
+        FileValidation fileValidation = new CsvFileValidationImpl();
+        fileValidation.validateFile(FROM_FILE_PATH);
 
-        CsvTransactionsParser csvTransactionsParser = new CsvTransactionsParserParserImpl();
+        FileReaderService fileReaderService = new FileReaderServiceImpl();
+        List<String> processedData = fileReaderService.readCsvFile(FROM_FILE_PATH);
+
+        CsvTransactionsParser csvTransactionsParser = new CsvTransactionsParserImpl();
         List<FruitTransaction> fruitTransactionList =
                 csvTransactionsParser.parseTransactions(processedData);
 
@@ -48,10 +53,10 @@ public class Main {
         FruitShopService fruitShopService = new FruitShopServiceImpl(operationStrategy);
         fruitShopService.transactionProcess(fruitTransactionList);
 
-        CsvReportService csvReportService = new CsvReportServiceImpl();
-        String report = csvReportService.getReport();
+        ReportInFileService reportInFileService = new ReportInCsvFileServiceImpl();
+        String report = reportInFileService.getReport();
 
-        CsvFileWriterService csvFileWriterService = new CsvFileWriterServiceImpl();
-        csvFileWriterService.writeToFile(report, TO_FILE_PATH);
+        FileWriterService fileWriterService = new FileWriterServiceImpl();
+        fileWriterService.writeToFile(report, TO_FILE_PATH);
     }
 }
