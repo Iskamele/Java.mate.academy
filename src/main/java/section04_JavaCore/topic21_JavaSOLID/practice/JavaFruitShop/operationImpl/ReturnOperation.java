@@ -2,13 +2,13 @@ package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImp
 
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Storage;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationStrategy.OperationHandler;
 
 public class ReturnOperation implements OperationHandler {
 
     @Override
     public void handleOperation(FruitTransaction transaction) {
-        int oldQuantity = Storage.fruitStorage.get(transaction.getFruit());
-        Storage.fruitStorage.put(transaction.getFruit(), oldQuantity + transaction.getQuantity());
+        int oldQuantity = Storage.getFruitStorage().get(transaction.getFruit());
+        Storage.getFruitStorage().put(transaction.getFruit(),
+                oldQuantity + transaction.getQuantity());
     }
 }
