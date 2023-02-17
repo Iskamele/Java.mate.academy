@@ -1,16 +1,16 @@
 package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl;
 
-import java.util.stream.Collectors;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Storage;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvReportService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportInCsvService;
+import java.util.stream.Collectors;
 
-public class CsvReportServiceImpl implements CsvReportService {
+public class ReportInCsvServiceImpl implements ReportInCsvService {
     private static final String TITLE = "fruit,quantity\n";
     private static final String DATA_SEPARATOR = ",";
 
     @Override
     public String getReport() {
-        return TITLE + Storage.fruitStorage.entrySet()
+        return TITLE + Storage.getFruitStorage().entrySet()
                 .stream()
                 .map(s -> s.getKey() + DATA_SEPARATOR + s.getValue() + System.lineSeparator())
                 .collect(Collectors.joining());
