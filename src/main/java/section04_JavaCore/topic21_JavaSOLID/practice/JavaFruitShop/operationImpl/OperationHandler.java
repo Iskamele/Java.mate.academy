@@ -1,4 +1,4 @@
-package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationStrategy;
+package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl;
 
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
 
