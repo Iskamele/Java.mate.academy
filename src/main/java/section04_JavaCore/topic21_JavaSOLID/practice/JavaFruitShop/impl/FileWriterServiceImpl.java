@@ -1,11 +1,11 @@
 package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl;
 
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileWriterService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.CsvFileWriterService;
 
-public class CsvFileWriterServiceImpl implements CsvFileWriterService {
+public class FileWriterServiceImpl implements FileWriterService {
 
     @Override
     public void writeToFile(String data, String toFilePath) {
