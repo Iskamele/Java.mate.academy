@@ -1,10 +1,10 @@
 package section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl;
 
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Storage;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportInCsvService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportInFileService;
 import java.util.stream.Collectors;
 
-public class ReportInCsvServiceImpl implements ReportInCsvService {
+public class ReportInCsvFileServiceImpl implements ReportInFileService {
     private static final String TITLE = "fruit,quantity\n";
     private static final String DATA_SEPARATOR = ",";
 
