@@ -5,7 +5,7 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.CsvTrans
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FileReaderServiceImpl;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FileWriterServiceImpl;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.FruitShopServiceImpl;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.ReportInCsvFileServiceImpl;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.impl.ReportServiceImpl;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.BalanceOperation;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.operationImpl.OperationHandler;
@@ -18,7 +18,7 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileR
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileValidation;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FileWriterService;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.FruitShopService;
-import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportInFileService;
+import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.service.ReportService;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -43,18 +43,18 @@ public class Main {
         fileValidation.validateFile(FROM_FILE_PATH);
 
         FileReaderService fileReaderService = new FileReaderServiceImpl();
-        List<String> processedData = fileReaderService.readCsvFile(FROM_FILE_PATH);
+        List<String> csvLines = fileReaderService.readCsvFile(FROM_FILE_PATH);
 
         CsvTransactionsParser csvTransactionsParser = new CsvTransactionsParserImpl();
         List<FruitTransaction> fruitTransactionList =
-                csvTransactionsParser.parseTransactions(processedData);
+                csvTransactionsParser.parseTransactions(csvLines);
 
         OperationStrategy operationStrategy = new OperationStrategy(operationHandlerMap);
         FruitShopService fruitShopService = new FruitShopServiceImpl(operationStrategy);
-        fruitShopService.transactionProcess(fruitTransactionList);
+        fruitShopService.processTransactions(fruitTransactionList);
 
-        ReportInFileService reportInFileService = new ReportInCsvFileServiceImpl();
-        String report = reportInFileService.getReport();
+        ReportService reportService = new ReportServiceImpl();
+        String report = reportService.getReport();
 
         FileWriterService fileWriterService = new FileWriterServiceImpl();
         fileWriterService.writeToFile(report, TO_FILE_PATH);
