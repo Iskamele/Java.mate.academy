@@ -39,7 +39,7 @@ public class CsvFileValidationImpl implements FileValidation {
     private void fileNotEmpty(File file) {
         if (file.length() == 0) {
             throw new IllegalArgumentException("File is empty: " + file.getAbsolutePath()
-                    + String.format("\nThe method expects a file with a similar data structure : "
+                    + String.format("\nThe method expects a file with a similar data structure: "
                     + "\n\n%s\n", VALID_CSV_EXAMPLE));
         }
     }
