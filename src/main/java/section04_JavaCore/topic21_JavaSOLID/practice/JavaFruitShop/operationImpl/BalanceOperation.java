@@ -4,7 +4,6 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Stor
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
 
 public class BalanceOperation implements OperationHandler {
-
     @Override
     public void handleOperation(FruitTransaction transaction) {
         Storage.getFruitStorage().put(transaction.getFruit(), transaction.getQuantity());
