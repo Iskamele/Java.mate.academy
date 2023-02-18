@@ -4,5 +4,5 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTr
 import java.util.List;
 
 public interface FruitShopService {
-    void transactionProcess(List<FruitTransaction> fruitTransactionList);
+    void processTransactions(List<FruitTransaction> fruitTransactionList);
 }
