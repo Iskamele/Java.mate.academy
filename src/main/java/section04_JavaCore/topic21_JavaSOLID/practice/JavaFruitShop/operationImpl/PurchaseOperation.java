@@ -4,14 +4,19 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Stor
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
 
 public class PurchaseOperation implements OperationHandler {
-
     @Override
     public void handleOperation(FruitTransaction transaction) {
-        int oldQuantity = Storage.getFruitStorage().get(transaction.getFruit());
-        if (oldQuantity < transaction.getQuantity()) {
+        Storage.getFruitStorage().merge(
+                transaction.getFruit(),
+                transaction.getQuantity(),
+                PurchaseOperation::purchaseOperation);
+    }
+
+    private static Integer purchaseOperation(Integer oldValue, Integer newValue) {
+        int result = oldValue - newValue;
+        if (result < 0) {
             throw new RuntimeException("Not enough fruit. The transaction could not be completed.");
         }
-        Storage.getFruitStorage().put(transaction.getFruit(),
-                oldQuantity - transaction.getQuantity());
+        return result;
     }
 }
