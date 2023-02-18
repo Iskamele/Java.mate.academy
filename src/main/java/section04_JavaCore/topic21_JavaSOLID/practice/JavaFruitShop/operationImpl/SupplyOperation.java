@@ -4,11 +4,12 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.database.Stor
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShop.model.FruitTransaction;
 
 public class SupplyOperation implements OperationHandler {
-
     @Override
     public void handleOperation(FruitTransaction transaction) {
-        int oldQuantity = Storage.getFruitStorage().get(transaction.getFruit());
-        Storage.getFruitStorage().put(transaction.getFruit(),
-                oldQuantity + transaction.getQuantity());
+        Storage.getFruitStorage().merge(
+                transaction.getFruit(),
+                transaction.getQuantity(),
+                Integer::sum
+        );
     }
 }
