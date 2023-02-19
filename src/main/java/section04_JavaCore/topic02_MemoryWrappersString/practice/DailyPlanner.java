@@ -10,9 +10,12 @@ public class DailyPlanner {
     public static String createDailyPlan(String[] plans) {
         StringBuilder builder = new StringBuilder("My plans:");
         int count = 1;
-
         for (String element : plans) {
-            builder.append("\n").append(count).append(".) ").append(element).append(";");
+            builder.append("\n");
+            builder.append(count);
+            builder.append(".) ");
+            builder.append(element);
+            builder.append(";");
             count++;
         }
         return builder.toString();
