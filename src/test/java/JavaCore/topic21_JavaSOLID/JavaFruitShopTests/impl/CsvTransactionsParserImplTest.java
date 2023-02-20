@@ -3,15 +3,15 @@ package JavaCore.topic21_JavaSOLID.JavaFruitShopTests.impl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShopTests.impl.CsvTransactionsParserImpl;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShopTests.model.FruitTransaction;
 import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShopTests.service.CsvTransactionsParser;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class CsvTransactionsParserImplTest {
     private static CsvTransactionsParser csvTransactionsParser;
@@ -34,7 +34,8 @@ public class CsvTransactionsParserImplTest {
     private static final String[] THIRD_INVALID_QUANTITY_TRANSACTIONS =
             {"r,banana,-1", "b,apple,-5"};
     private static final String PARSE_EXCEPTION_MESSAGE = ParseException.class.toString();
-    private static final String ILLEGAL_ARGUMENT_EXCEPTION_MESSAGE = IllegalArgumentException.class.toString();
+    private static final String ILLEGAL_ARGUMENT_EXCEPTION_MESSAGE =
+            IllegalArgumentException.class.toString();
 
     @BeforeClass
     public static void beforeClass() {
