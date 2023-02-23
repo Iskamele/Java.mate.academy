@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 public class FileWriterServiceImplTest {
@@ -18,8 +18,8 @@ public class FileWriterServiceImplTest {
     private static final String INVALID_RESULT_FILE_PATH = "/invalid/path/test.txt";
     private static final String TEST_DATA = "Hello World!";
 
-    @BeforeClass
-    public static void beforeClass() {
+    @Before
+    public void setUp() {
         fileWriterService = new FileWriterServiceImpl();
     }
 
@@ -29,20 +29,24 @@ public class FileWriterServiceImplTest {
     }
 
     @Test
-    public void writeToFile_writeToValidPath() { //"Method should be create new file: " + expected + - було в ассерті а перевірки на це не бачу
+    public void writeToFile_writeDataInToFilePath_Ok() {
         //arrange
         String expected = TEST_DATA;
+
         //act
         fileWriterService.writeToFile(expected, RESULT_FILE_PATH);
         String actual = readFromFile(RESULT_FILE_PATH).trim();
+
         //assert
-        assertEquals("Incorrect data after writing operation: ", expected, actual);
+        assertEquals("Incorrect data after writing operation: ",
+                expected, actual);
     }
 
     @Test(expected = RuntimeException.class)
-    public void writeToFile_writeToInvalidPath() {
+    public void writeToFile_writeToInvalidPath_NotOk() {
         //act
         fileWriterService.writeToFile(TEST_DATA, INVALID_RESULT_FILE_PATH);
+
         //assert
         fail("Writing to an invalid data path is not allowed.");
     }
