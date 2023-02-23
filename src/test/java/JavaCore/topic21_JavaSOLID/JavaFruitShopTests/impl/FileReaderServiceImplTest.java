@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 public class FileReaderServiceImplTest {
@@ -32,8 +32,8 @@ public class FileReaderServiceImplTest {
                     "s,banana,100",
                     "p,banana,13");
 
-    @BeforeClass
-    public static void beforeClass() {
+    @Before
+    public void setUp() {
         fileReaderService = new FileReaderServiceImpl();
     }
 
@@ -43,21 +43,26 @@ public class FileReaderServiceImplTest {
     }
 
     @Test
-    public void readFile_getListOfStrings() throws IOException {
+    public void readFile_getListOfStringsFromValidFile_Ok() throws IOException {
         //arrange
         File file = new File(TEST_FILE_PATH);
         Files.write(file.toPath(), List.of(VALID_INPUT_DATA));
+
         //act
         List<String> actual = fileReaderService.readFile(file.getPath());
+
         //assert
-        assertEquals("The list size from file is incorrect:", EXPECTED_RESULT.size(), actual.size());
-        assertArrayEquals("The list from file is incorrect:", EXPECTED_RESULT.toArray(), actual.toArray());
+        assertEquals("The list size from file is incorrect:",
+                EXPECTED_RESULT.size(), actual.size());
+        assertArrayEquals("The list from file is incorrect:",
+                EXPECTED_RESULT.toArray(), actual.toArray());
     }
 
     @Test(expected = RuntimeException.class)
-    public void readFile_readInvalidFilePath() {
+    public void readFile_readInvalidFilePath_NotOk() {
         //act
         fileReaderService.readFile(INVALID_FILE_PATH);
+
         //assert
         fail("Expected the file does not exist.");
     }
