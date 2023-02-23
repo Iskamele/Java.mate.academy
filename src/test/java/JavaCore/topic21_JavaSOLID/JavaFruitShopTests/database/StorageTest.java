@@ -42,7 +42,8 @@ public class StorageTest {
         int actualQuantity = Storage.getFruitStorage().getOrDefault(FRUIT, DEFAULT_QUANTITY);
 
         //assert
-        assertEquals("Wrong value in the storage after updating:", expectedQuantity, actualQuantity);
+        assertEquals("Wrong value in the storage after updating:",
+                expectedQuantity, actualQuantity);
     }
 
     @Test
@@ -55,6 +56,7 @@ public class StorageTest {
         int actualQuantity = Storage.getFruitStorage().getOrDefault(FRUIT, DEFAULT_QUANTITY);
 
         //assert
-        assertEquals("Wrong value in the storage after updating:", expectedQuantity, actualQuantity);
+        assertEquals("Wrong value in the storage after updating:",
+                expectedQuantity, actualQuantity);
     }
 }
