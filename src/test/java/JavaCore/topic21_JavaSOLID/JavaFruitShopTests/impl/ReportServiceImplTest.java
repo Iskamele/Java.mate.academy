@@ -10,17 +10,20 @@ import section04_JavaCore.topic21_JavaSOLID.practice.JavaFruitShopTests.service.
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.MockedStatic;
 
 public class ReportServiceImplTest {
     private static Map<String, Integer> fruitStorage;
     private static ReportService reportService;
+    private static MockedStatic<Storage> mockStorage;
 
     @BeforeClass
     public static void beforeClass() {
-        mockStatic(Storage.class);
+        mockStorage = mockStatic(Storage.class);
         fruitStorage = new HashMap<>();
     }
 
@@ -34,6 +37,11 @@ public class ReportServiceImplTest {
         fruitStorage.clear();
     }
 
+    @AfterClass
+    public static void afterClass() {
+        mockStorage.close();
+    }
+
     @Test
     public void getReport_getReportSomeData_Ok() {
         //arrange
@@ -42,7 +50,6 @@ public class ReportServiceImplTest {
         String expected = "fruit,quantity" + System.lineSeparator()
                 + "banana,50" + System.lineSeparator()
                 + "apple,200" + System.lineSeparator();
-
         when(Storage.getFruitStorage()).thenReturn(fruitStorage);
 
         //act
