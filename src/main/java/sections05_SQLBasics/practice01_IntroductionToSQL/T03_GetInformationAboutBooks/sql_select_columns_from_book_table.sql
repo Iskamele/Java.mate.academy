@@ -1,0 +1,1 @@
+SELECT title, publish_year FROM book
