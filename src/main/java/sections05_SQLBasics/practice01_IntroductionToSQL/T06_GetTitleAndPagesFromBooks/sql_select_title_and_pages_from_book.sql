@@ -1,0 +1,1 @@
+SELECT title, number_of_pages FROM book
