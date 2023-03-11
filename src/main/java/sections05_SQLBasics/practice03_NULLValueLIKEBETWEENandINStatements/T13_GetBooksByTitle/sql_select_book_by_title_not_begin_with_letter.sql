@@ -1,0 +1,3 @@
+SELECT *
+FROM book
+WHERE title NOT LIKE 'F%'
