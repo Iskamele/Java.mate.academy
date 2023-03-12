@@ -1,0 +1,4 @@
+SELECT *
+FROM pupil
+ORDER BY birth_date DESC
+    LIMIT 3;
