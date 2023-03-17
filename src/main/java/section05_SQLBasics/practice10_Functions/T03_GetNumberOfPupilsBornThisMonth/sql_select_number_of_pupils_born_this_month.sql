@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS number_of_pupils
+FROM pupil
+WHERE EXTRACT(MONTH FROM birth_date) = EXTRACT(MONTH FROM CURRENT_DATE);
