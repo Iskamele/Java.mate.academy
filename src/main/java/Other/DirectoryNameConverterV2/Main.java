@@ -11,7 +11,7 @@ import Other.DirectoryNameConverterV2.service.impl.FileReaderServiceImpl;
 public class Main {
     public static void main(String[] args) {
         String fromFile = "src/main/java/Other/DirectoryNameConverterV2/names.txt";
-        String toPath = "src/main/java/";
+        String toPath = "src/main/java/section07_JavaWeb/topic02_ServletLifeCycle";
 
         FileReaderService fileReaderService = new FileReaderServiceImpl();
         DirectoryProcessorService directoryProcessorService = new DirectoryProcessorServiceImpl();
