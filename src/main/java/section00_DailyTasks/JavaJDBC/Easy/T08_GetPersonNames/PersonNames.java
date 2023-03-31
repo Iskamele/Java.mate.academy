@@ -1,4 +1,4 @@
-package section00_DailyTasks.Daily_01.Easy.T08_GetPersonNames;
+package section00_DailyTasks.JavaJDBC.Easy.T08_GetPersonNames;
 
 import java.util.List;
 import java.util.stream.Collectors;

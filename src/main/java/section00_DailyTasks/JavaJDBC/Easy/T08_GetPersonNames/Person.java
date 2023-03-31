@@ -1,5 +1,5 @@
 
-package section00_DailyTasks.Daily_01.Easy.T08_GetPersonNames;
+package section00_DailyTasks.JavaJDBC.Easy.T08_GetPersonNames;
 
 public class Person {
     private int age;
