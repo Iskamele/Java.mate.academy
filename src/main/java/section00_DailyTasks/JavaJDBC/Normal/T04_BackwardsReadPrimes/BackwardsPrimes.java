@@ -1,4 +1,4 @@
-package section00_DailyTasks.Daily_01.Normal.T04_BackwardsReadPrimes;
+package section00_DailyTasks.JavaJDBC.Normal.T04_BackwardsReadPrimes;
 
 import java.util.stream.IntStream;
 
