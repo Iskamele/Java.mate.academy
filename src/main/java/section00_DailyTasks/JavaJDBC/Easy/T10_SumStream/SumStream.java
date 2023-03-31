@@ -1,4 +1,4 @@
-package section00_DailyTasks.Daily_01.Easy.T10_SumStream;
+package section00_DailyTasks.JavaJDBC.Easy.T10_SumStream;
 
 import java.util.List;
 
