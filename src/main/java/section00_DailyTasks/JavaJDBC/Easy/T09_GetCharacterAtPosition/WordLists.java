@@ -1,5 +1,5 @@
 
-package section00_DailyTasks.Daily_01.Easy.T09_GetCharacterAtPosition;
+package section00_DailyTasks.JavaJDBC.Easy.T09_GetCharacterAtPosition;
 
 import java.util.List;
 import java.util.Objects;
