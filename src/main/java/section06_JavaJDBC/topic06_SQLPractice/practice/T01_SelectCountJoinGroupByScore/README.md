@@ -1,0 +1,18 @@
+Дано две таблицы users и reviews:
+
+______________________users______________________              
+|id| username |     email     | country | sex   |
+| 1| Tom      |tom@email.com  | Ukraine | male  |
+.................................................
+| 4| Jane     |jane@email.com |   USA   |female |
+
+
+_____________reviews________________            
+|id| score |   review     | user_id |
+| 1|  5    |Great product!|     1   |
+....................................
+| 6|  4    |Good enough   |     4   |
+
+Отобразите оценки и количество пользователей, которые их получили.
+
+Результат должен содержать две колонки: score и number_of_users.
