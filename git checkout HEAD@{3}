@@ -1,0 +1,580 @@
+[33m36bbc0c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: checkout: moving from cc484bce8ea18e55fb478060e7bee1a8874d59f7 to master
+[33mcc484bc[m HEAD@{1}: checkout: moving from master to cc484bc
+[33m36bbc0c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{2}: rebase (finish): returning to refs/heads/master
+[33m36bbc0c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{3}: rebase (start): checkout 36bbc0c4ef3b7adc707eba18a64fdf31e2703415
+[33m7a0e8eb[m HEAD@{4}: commit: everted 81d926c4
+[33m36bbc0c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{5}: commit: Delete and update entity with many to many theory.
+[33mcc484bc[m HEAD@{6}: commit: Insert entity with many to many relation theory.
+[33mff72213[m HEAD@{7}: commit: Get entities with many to many relation theory.
+[33m81d926c[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{8}: commit: Add Main class
+[33m2ecf025[m HEAD@{9}: commit: Add Main class
+[33m549eb44[m HEAD@{10}: commit: Add Injector class
+[33m919b7cf[m HEAD@{11}: commit: Add Injector class
+[33m8784f69[m HEAD@{12}: commit: Add ConnectionUtil class
+[33me200b7d[m HEAD@{13}: commit: Add ConnectionUtil class
+[33mcc4d88f[m HEAD@{14}: commit: Add LiteraryFormatServiceImpl implementation
+[33m6af9c97[m HEAD@{15}: commit: Add LiteraryFormatServiceImpl implementation
+[33m1808df8[m HEAD@{16}: commit: Add LiteraryFormatService interface
+[33mbafc348[m HEAD@{17}: commit: Add LiteraryFormatService interface
+[33m74657f4[m HEAD@{18}: commit: Add LiteraryFormat class
+[33m2c432d3[m HEAD@{19}: commit: Add LiteraryFormat class
+[33mc9c4f86[m HEAD@{20}: commit: Add Book class
+[33mbe59e10[m HEAD@{21}: commit: Add Book class
+[33me97f7ea[m HEAD@{22}: commit: Add Service annotation
+[33m7cf031d[m HEAD@{23}: commit: Add Service annotation
+[33md4e75a7[m HEAD@{24}: commit: Add Inject annotation
+[33ma56b68b[m HEAD@{25}: commit: Add Inject annotation
+[33ma5f7c1a[m HEAD@{26}: commit: Add Dao annotation
+[33me352d3a[m HEAD@{27}: commit: Add Dao annotation
+[33md9b80c6[m HEAD@{28}: commit: Add DataProcessingException class
+[33m2b2813c[m HEAD@{29}: commit: Add DataProcessingException class
+[33m2e25538[m HEAD@{30}: commit: Add LiteraryFormatDaoImpl implementation
+[33m4495dd8[m HEAD@{31}: commit: Add LiteraryFormatDaoImpl implementation
+[33m1f53286[m HEAD@{32}: commit: Add LiteraryFormatDao interface
+[33m24c6ebb[m HEAD@{33}: commit: Add LiteraryFormatDao interface
+[33m06c43c7[m HEAD@{34}: commit: Add BookDaoImpl implementation
+[33m862bcd3[m HEAD@{35}: commit: Add BookDaoImpl implementation
+[33m0ecce4b[m HEAD@{36}: commit: Add BookDao interface
+[33m537ff71[m HEAD@{37}: commit: Add BookDao interface
+[33m4707b12[m HEAD@{38}: commit: Added init table for library_db.
+[33m2dee992[m HEAD@{39}: commit: Added web intro test.
+[33m4c5d9f4[m HEAD@{40}: commit: Add Main class for starting the application
+[33m421909e[m HEAD@{41}: commit: Add Main class for starting the application
+[33me085e0f[m HEAD@{42}: commit: Add Injector class for dependency injection
+[33md8d213e[m HEAD@{43}: commit: Add Injector class for dependency injection
+[33m334838d[m HEAD@{44}: commit: Add ConnectionUtil class for managing database connections
+[33mc23c1a1[m HEAD@{45}: commit: Add ConnectionUtil class for managing database connections
+[33m6e22fdd[m HEAD@{46}: commit: Add implementation for LiteraryFormatServiceImpl
+[33m63bb11b[m HEAD@{47}: commit: Add implementation for LiteraryFormatServiceImpl
+[33m70e4015[m HEAD@{48}: commit: Add LiteraryFormatService interface for working with literary format data
+[33m86eb97b[m HEAD@{49}: commit: Add LiteraryFormatService interface for working with literary format data
+[33m95fb991[m HEAD@{50}: commit: Add LiteraryFormat class for representing literary format data
+[33mdc4fae1[m HEAD@{51}: commit: Add LiteraryFormat class for representing literary format data
+[33m5653cfd[m HEAD@{52}: commit: Add Book class for representing book data
+[33mdfbeeb4[m HEAD@{53}: commit: Add Book class for representing book data
+[33m4a5e375[m HEAD@{54}: commit: Add Service interface
+[33m5b6c9be[m HEAD@{55}: commit: Add Service interface
+[33m1946f12[m HEAD@{56}: commit: Add Inject interface for marking objects to be injected
+[33mc275529[m HEAD@{57}: commit: Add Inject interface for marking objects to be injected
+[33mb1c1634[m HEAD@{58}: commit: Add implementation for BookDaoImpl
+[33m02a425a[m HEAD@{59}: commit: Add BookDao interface
+[33m628c7b7[m HEAD@{60}: commit: Add DataProcessingException for handling data processing errors
+[33ma102224[m HEAD@{61}: commit: Add implementation for LiteraryFormatDaoImpl
+[33m8cc20ed[m HEAD@{62}: commit: Add LiteraryFormatDao interface
+[33m79f30a6[m HEAD@{63}: commit: Add Dao interface
+[33m13e3c16[m HEAD@{64}: commit: Add Dao interface
+[33mdf29ee2[m HEAD@{65}: commit: Add DataProcessingException for handling data processing errors
+[33m42d6354[m HEAD@{66}: commit: Add implementation for LiteraryFormatDaoImpl
+[33mb144963[m HEAD@{67}: commit: Add LiteraryFormatDao interface
+[33m9853b13[m HEAD@{68}: commit: Create main class for the application
+[33m7a1e720[m HEAD@{69}: commit: Create DI Injector class
+[33m31882ef[m HEAD@{70}: commit: Create utility class for database connection management
+[33m02cdaff[m HEAD@{71}: commit: Create implementation of LiteraryFormatService interface
+[33m22095f2[m HEAD@{72}: commit: Create LiteraryFormatService interface
+[33m2d8ff26[m HEAD@{73}: commit: Create LiteraryFormat entity class
+[33m963f23b[m HEAD@{74}: commit: Create Service interface
+[33m98b535b[m HEAD@{75}: commit: Create custom annotation for DI
+[33m13d8b49[m HEAD@{76}: commit: Create Dao interface
+[33mbf0b65b[m HEAD@{77}: commit: Create custom exception for data processing errors
+[33m4a23784[m HEAD@{78}: commit: Create implementation of LiteraryFormatDao interface
+[33m6f1d6ef[m HEAD@{79}: commit: Create LiteraryFormatDao interface
+[33me9c0294[m HEAD@{80}: commit: Created main application file Application.java
+[33maf54db7[m HEAD@{81}: commit: Created BankAccountService interface and implementation
+[33mf5007a8[m HEAD@{82}: commit: Created BankAccountService interface and implementation
+[33me00cf76[m HEAD@{83}: commit: Implemented BankAccount model
+[33mef73022[m HEAD@{84}: commit: Defined BankAccountDao interface
+[33mea5388b[m HEAD@{85}: commit: Created JDBC implementation of BankAccountDao
+[33m9dc8695[m HEAD@{86}: commit: Added test for validate credit card number daily task.
+[33m71f6fdd[m HEAD@{87}: commit: Added test for backward read primes daily task.
+[33m9465a99[m HEAD@{88}: commit: Added test for valid phone number daily task.
+[33mac1f2e0[m HEAD@{89}: commit: Added test for human time daily task.
+[33m67aa86d[m HEAD@{90}: commit: Added test for sum stream daily task.
+[33me8c51de[m HEAD@{91}: commit: Added test for word list daily task.
+[33m56df6d7[m HEAD@{92}: commit: Added test for person names daily task.
+[33m248f3fe[m HEAD@{93}: commit: Main class to start the application.
+[33m9d53056[m HEAD@{94}: commit: Provide a utility class for establishing a connection to the database.
+[33me7234cf[m HEAD@{95}: commit: Define the methods for the ManufacturerService interface.
+[33m2244214[m HEAD@{96}: commit: Define the methods for the DriverService interface.
+[33m999f4bd[m HEAD@{97}: commit: Implement the ManufacturerService interface to provide business logic for Manufacturer operations.
+[33m8d54c4b[m HEAD@{98}: commit: Implement the DriverService interface to provide business logic for Driver operations.
+[33md3c66bb[m HEAD@{99}: commit: Define SQL statements for initializing the database schema and tables.
+[33m35a0933[m HEAD@{100}: commit: Define the Manufacturer model with all its fields and getter/setter methods.
+[33m36fa1f6[m HEAD@{101}: commit: Define the Driver model with all its fields and getter/setter methods.
+[33m10f5142[m HEAD@{102}: commit: Define the common methods for all service implementations.
+[33mb23d3ec[m HEAD@{103}: commit: Provide the functionality for dependency injection.
+[33m95c5082[m HEAD@{104}: commit: Define the annotation for dependency injection.
+[33m1322d3e[m HEAD@{105}: commit: Define the common methods for all DAO implementations.
+[33mebde104[m HEAD@{106}: commit: Define a custom exception for data processing errors.
+[33m46f7f6c[m HEAD@{107}: commit: Define CRUD operations for the Manufacturer table.
+[33mdda356a[m HEAD@{108}: commit: Define CRUD operations for the Driver table.
+[33m2c75863[m HEAD@{109}: commit: Implement the ManufacturerDao interface to interact with the Manufacturer table in the database.
+[33ma05536e[m HEAD@{110}: commit: Implement the DriverDao interface to interact with the Driver table in the database.
+[33m0307f6c[m HEAD@{111}: commit: Codestyle fix.
+[33mf86301e[m HEAD@{112}: commit: Codestyle fix.
+[33mda6248b[m HEAD@{113}: commit: Codestyle fix.
+[33m940bd55[m HEAD@{114}: commit: Changed directory.
+[33m2910c1d[m HEAD@{115}: commit: Added validate credit card number daily task.
+[33mbb32da4[m HEAD@{116}: commit: Added backwards read primes daily task.
+[33m4d0230d[m HEAD@{117}: commit: Added simple having daily task.
+[33m1e93fee[m HEAD@{118}: commit: Added min or max sql daily task.
+[33m0b3a21c[m HEAD@{119}: commit: Added valid phone number daily task.
+[33m2613371[m HEAD@{120}: commit: Added human readable time daily task.
+[33m281af1a[m HEAD@{121}: commit: Added sum stream daily task.
+[33m3fa10b5[m HEAD@{122}: commit: Added get character at position daily task.
+[33mad67905[m HEAD@{123}: commit: Added get person names daily task.
+[33m4c71d26[m HEAD@{124}: commit: Added dependencies for Tomcat.
+[33m86edf4b[m HEAD@{125}: commit: Added is divisible by Y A and Z daily task.
+[33m028d7f0[m HEAD@{126}: commit: Added simple distinct daily task.
+[33md33fc50[m HEAD@{127}: commit: Added rounded decimals daily task.
+[33me47c45f[m HEAD@{128}: commit: Added devices to lowercase daily task.
+[33m858b4cb[m HEAD@{129}: commit: Added ordering devices by price daily task.
+[33m5235fe2[m HEAD@{130}: commit: Added expressions matter daily task.
+[33ma00991f[m HEAD@{131}: commit: Added on the canadian border daily task.
+[33m43aa420[m HEAD@{132}: commit: Added count ip addresses daily task.
+[33m9fd1d07[m HEAD@{133}: commit: Added next bigger number daily task.
+[33m408536a[m HEAD@{134}: commit: Added find similar from Dictionary daily task.
+[33mbc2252f[m HEAD@{135}: commit: Added valid parentheses daily task.
+[33m4a4399d[m HEAD@{136}: commit: Added directory creater.
+[33m647321f[m HEAD@{137}: commit: Convert to camel case daily task.
+[33md25acf7[m HEAD@{138}: commit: Break chocolate problem daily task.
+[33mde32495[m HEAD@{139}: commit: Who likes it daily task.
+[33m572aeda[m HEAD@{140}: commit: Jumping number daily task.
+[33mad0590d[m HEAD@{141}: commit: Remove all vowels daily task.
+[33mdbead35[m HEAD@{142}: commit: Responsible drinking daily task.
+[33m051ff66[m HEAD@{143}: commit: Trunk to hundredth test daily task.
+[33md27a95b[m HEAD@{144}: commit: Trunk to hundredth daily task.
+[33mcc0c7f2[m HEAD@{145}: commit: Row weights daily task.
+[33mbfca745[m HEAD@{146}: commit: Count divisors daily task.
+[33mfebfed5[m HEAD@{147}: commit: Total points daily task.
+[33m57117ed[m HEAD@{148}: commit: Reverse bits to integer daily task.
+[33me926cb6[m HEAD@{149}: commit: String repeat daily task.
+[33m60f7991[m HEAD@{150}: commit: Get average mark daily task.
+[33macd3295[m HEAD@{151}: commit: Round to hundredth daily task.
+[33md9418eb[m HEAD@{152}: commit: Swap values daily task.
+[33m7454801[m HEAD@{153}: commit: Convert to KPM daily task.
+[33me400378[m HEAD@{154}: commit: Secret message daily task.
+[33m20689d6[m HEAD@{155}: commit: Secret message daily task.
+[33ma14de23[m HEAD@{156}: commit: Added file and main method.
+[33m2ad2b31[m HEAD@{157}: commit: Added directory creator.
+[33m3ff1b76[m HEAD@{158}: commit: Added directory processor.
+[33m7a78512[m HEAD@{159}: commit: Added file reader.
+[33m8cbc8dc[m HEAD@{160}: commit: Renamed.
+[33m7796a18[m HEAD@{161}: commit: Backwards read primes daily practice.
+[33maf02d8f[m HEAD@{162}: commit: Simple having daily practice.
+[33m1c3746e[m HEAD@{163}: commit: Min or max sql daily practice.
+[33m83c148e[m HEAD@{164}: commit: Valid phone number daily practice.
+[33m9f3a74c[m HEAD@{165}: commit: Sum stream daily practice.
+[33ma4ca2f2[m HEAD@{166}: commit: Get character at position daily practice.
+[33m9f9205b[m HEAD@{167}: commit: Get person names daily practice.
+[33m460039b[m HEAD@{168}: commit: Is divisible by y and z daily practice.
+[33mf891d66[m HEAD@{169}: commit: Simple distinct daily practice.
+[33mfe5c3c1[m HEAD@{170}: commit: Rounded decimals daily practice.
+[33m5af42e0[m HEAD@{171}: commit: Devices to lowercase daily practice.
+[33m73f577d[m HEAD@{172}: commit: Ordering device by price daily practice.
+[33md03d000[m HEAD@{173}: commit: Expressions matter daily practice.
+[33mf044308[m HEAD@{174}: commit: On the Canadian border daily practice.
+[33m4ff0939[m HEAD@{175}: commit: Added main method for tests.
+[33m3360d91[m HEAD@{176}: commit: Added ConnectionUtil.
+[33m630d7d9[m HEAD@{177}: commit: Added create statement for manufacturers table.
+[33mef48d59[m HEAD@{178}: commit: Added Manufacturer model.
+[33m74e7921[m HEAD@{179}: commit: Added injector for Dao annotation.
+[33m2c30ca5[m HEAD@{180}: commit: Added Dao annotation.
+[33m95cf6fd[m HEAD@{181}: commit: Added custom exception.
+[33m0d5ca19[m HEAD@{182}: commit: Added impl of interface for Manufacturer DAO.
+[33m71fdf16[m HEAD@{183}: commit: Added interface for Manufacturer DAO.
+[33m31f4b21[m HEAD@{184}: commit: Added mysql v8.0.32.
+[33m0873f36[m HEAD@{185}: commit: Changed right margin to 99.
+[33m90fa134[m HEAD@{186}: commit: CRUD theory.
+[33m14afa5b[m HEAD@{187}: commit: DELETE example theory.
+[33me98256c[m HEAD@{188}: commit: Statement, PreparedStatement and CallableStatement theory.
+[33me2316e6[m HEAD@{189}: commit: INSERT example theory.
+[33m5b0d5c0[m HEAD@{190}: commit: Connection closing, connection pool theory.
+[33m15b02e6[m HEAD@{191}: commit: DAO pattern theory.
+[33ma8e1ef7[m HEAD@{192}: commit: Select from DB theory.
+[33m9632462[m HEAD@{193}: commit: Get total salary by department practice.
+[33mea08e52[m HEAD@{194}: commit: Get the most expensive product by category practice.
+[33m4b4284d[m HEAD@{195}: commit: Get average mark by subjects for pupil practice.
+[33me79fa21[m HEAD@{196}: commit: Get amount of products by category practice.
+[33mae98484[m HEAD@{197}: commit: Get number of employees by hiring month practice.
+[33m04e4f8a[m HEAD@{198}: commit: Get number of products for each category practice.
+[33m4fc8b63[m HEAD@{199}: commit: Get average salary by staff position practice.
+[33m91ad37f[m HEAD@{200}: commit: Get formatted info about marks practice.
+[33mf15f945[m HEAD@{201}: commit: Get day, month and year of dismissal date practice.
+[33mb26340e[m HEAD@{202}: commit: Get formatted product info practice.
+[33mbb2a7c6[m HEAD@{203}: commit: Get number of pupils born this month practice.
+[33mde00457[m HEAD@{204}: commit: Get staff by hiring year practice.
+[33m07dc0a9[m HEAD@{205}: commit: Get formatted dish information practice.
+[33mfe55af6[m HEAD@{206}: commit: Get all employees with departments practice.
+[33m5fad028[m HEAD@{207}: commit: Get all existing departments practice.
+[33mf12cc97[m HEAD@{208}: commit: Get average mark by subject and year practice.
+[33mc2cff5e[m HEAD@{209}: commit: Get average mark for each pupil practice.
+[33m3df25b3[m HEAD@{210}: commit: Get average salary for each department practice.
+[33m840d8e8[m HEAD@{211}: commit: Get average marks for pupil practice.
+[33m382fe52[m HEAD@{212}: commit: Get average mark for each pupil by city practice.
+[33meee62b8[m HEAD@{213}: commit: Get number of products by category practice.
+[33mb61a234[m HEAD@{214}: commit: Get number of employees for each department practice.
+[33m7913aab[m HEAD@{215}: commit: Get min price for each category practice.
+[33m509a65b[m HEAD@{216}: commit: Get max salary for each department practice.
+[33m8bbbc95[m HEAD@{217}: commit: Get category names by price practice.
+[33m0d91aa1[m HEAD@{218}: commit: Get employees by last name practice.
+[33me806c22[m HEAD@{219}: commit: Get total amount of products in category practice.
+[33mbab8947[m HEAD@{220}: commit: Get employees by department id practice.
+[33mca884dd[m HEAD@{221}: commit: Get number of pages for each year practice.
+[33m4d93af1[m HEAD@{222}: commit: Get salary for each position practice.
+[33md70fa34[m HEAD@{223}: commit: Get number of pupil names practice.
+[33mede9291[m HEAD@{224}: commit: Get staff by sex practice.
+[33m1523a3a[m HEAD@{225}: commit: Get number of pupils by each city practice.
+[33m3159c54[m HEAD@{226}: commit: Moved to new directory.
+[33mb9c45f7[m HEAD@{227}: commit: Get number of subjects begin with letter practice.
+[33m68b2bda[m HEAD@{228}: commit: Get number of working staff practice.
+[33m7f6e629[m HEAD@{229}: commit: Get number of pupils with father phone practice.
+[33mf592af8[m HEAD@{230}: commit: Get number of books by year practice.
+[33m1e30bfc[m HEAD@{231}: commit: Get number of non-working staff practice.
+[33me73d37a[m HEAD@{232}: commit: Get number of pupils from city practice.
+[33me35b078[m HEAD@{233}: commit: Get total number of pages from book practice.
+[33m8e3685f[m HEAD@{234}: commit: Get price of dish by name practice.
+[33mf047591[m HEAD@{235}: commit: Get calories by dish name practice.
+[33m5fa05ae[m HEAD@{236}: commit: Get average salary of staff by hiring date practice.
+[33m1018580[m HEAD@{237}: commit: Get weight of dishes by calories practice.
+[33m2852185[m HEAD@{238}: commit: Get calories of dishes by price practice.
+[33m63a4b43[m HEAD@{239}: commit: Get last name of the last pupil practice.
+[33m9ade915[m HEAD@{240}: commit: Get max salary for teachers practice.
+[33mc47878f[m HEAD@{241}: commit: Get birth date of the youngest staff practice.
+[33m0f3c798[m HEAD@{242}: commit: Get hiring date of the first employee practice.
+[33meef6d58[m HEAD@{243}: commit: Get min number of pages from books practice.
+[33m8c5fc32[m HEAD@{244}: commit: Get min calories from dishes practice.
+[33mffa13f5[m HEAD@{245}: commit: Get the oldest book practice.
+[33m18d1cfe[m HEAD@{246}: commit: Get the three most expensive dishes practice.
+[33m3a27150[m HEAD@{247}: commit: Get subjects begin with letter practice.
+[33mfbecc81[m HEAD@{248}: commit: Changed directory path.
+[33m0cd8c0c[m HEAD@{249}: commit: Get list of positions practice.
+[33md842734[m HEAD@{250}: commit: Get list of cities practice.
+[33mf190163[m HEAD@{251}: commit: Get the youngest non-working staff practice.
+[33m0fde88b[m HEAD@{252}: commit: Get the oldest working staff practice.
+[33m545b8ca[m HEAD@{253}: commit: Get three youngest pupils practice.
+[33m7199c0c[m HEAD@{254}: commit: Get sorted dishes by weight and price practice.
+[33m5e957a3[m HEAD@{255}: commit: Get sorted pupils by first and last names practice.
+[33mb741a7d[m HEAD@{256}: commit: Get sorted books by title practice.
+[33m4bb1454[m HEAD@{257}: commit: Get sorted dishes by name practice.
+[33md94de22[m HEAD@{258}: commit: Get sorted books by publish year practice.
+[33m6fc3983[m HEAD@{259}: commit: Get sorted pupils by birth date practice.
+[33mcd1f5bc[m HEAD@{260}: commit: Get pupils not from cities practice.
+[33ma218d10[m HEAD@{261}: commit: Get pupils by birth date practice.
+[33meb217ef[m HEAD@{262}: commit: Get books by title practice.
+[33meac2700[m HEAD@{263}: commit: Get pupils by list of names practice.
+[33m1e4a79f[m HEAD@{264}: commit: Get dishes by prices practice.
+[33mca8cf0a[m HEAD@{265}: commit: Get books by year in interval practice.
+[33m41f5be9[m HEAD@{266}: commit: Get dishes by calories in interval practice.
+[33md5b113f[m HEAD@{267}: commit: Get working staff by name practice.
+[33m396022b[m HEAD@{268}: commit: Get subjects by name practice.
+[33m993c559[m HEAD@{269}: commit: Get staff by last name end with letter practice.
+[33m057eb86[m HEAD@{270}: commit: Get pupils by name with five letters practice.
+[33meba68f8[m HEAD@{271}: commit: Get pupils by name begin with letter practice.
+[33ma7b06f0[m HEAD@{272}: commit: Get pupils without parents phone practice.
+[33m14cde4f[m HEAD@{273}: commit: Get staff without phone number practice.
+[33mf3f8ad0[m HEAD@{274}: commit: Get non-working staff
+[33m8d7ed08[m HEAD@{275}: commit: Get books by pages and publish year practice.
+[33mcb4e4e1[m HEAD@{276}: commit: Get dishes by calories in diapason practice.
+[33me6f24ff[m HEAD@{277}: commit: Get pupils by cities practice.
+[33mfb676be[m HEAD@{278}: commit: Get books by publish year practice.
+[33mbac0eb0[m HEAD@{279}: commit: Get staff by sex, hiring date and salary practice.
+[33ma25d07d[m HEAD@{280}: commit: Get books by publish date and pages practice.
+[33m8409059[m HEAD@{281}: commit: Get pupils by birth date practice.
+[33m779a2d0[m HEAD@{282}: commit: Get staff by salary practice.
+[33m2699628[m HEAD@{283}: commit: Get no teachers practice.
+[33m655f522[m HEAD@{284}: commit: Get pupils not from Kyiv practice.
+[33m59b2b6b[m HEAD@{285}: commit: Get dishes by calories practice.
+[33m56c2fa7[m HEAD@{286}: commit: Get dishes by price practice.
+[33m5780a7f[m HEAD@{287}: commit: Get titles by publish year practice.
+[33m1307ef8[m HEAD@{288}: commit: Get pupil names by city practice.
+[33m3bd0081[m HEAD@{289}: commit: Get title and pages from books practice.
+[33me2c4be1[m HEAD@{290}: commit: Get name and price of dishes practice.
+[33mae44fa5[m HEAD@{291}: commit: Get data about pupils practice.
+[33m96a9fc9[m HEAD@{292}: commit: Get information about books practice.
+[33mbe15254[m HEAD@{293}: commit: Get all subjects practice.
+[33me211ab4[m HEAD@{294}: commit: Get all staff practice.
+[33mba35ba5[m HEAD@{295}: commit: Implemented logger for methods.
+[33m144a78d[m HEAD@{296}: commit: Fixed imports.
+[33me9ce42e[m HEAD@{297}: commit: Original implementation for Logger task.
+[33ma8a9b11[m HEAD@{298}: commit: Readme for Logger task.
+[33mccbdb6a[m HEAD@{299}: commit: Updated for logs.
+[33m2e0bcf0[m HEAD@{300}: commit: Removed logs.
+[33m3672de7[m HEAD@{301}: commit: Added log4j log.
+[33me9fe153[m HEAD@{302}: commit: Removed solution test-case.
+[33ma93cff7[m HEAD@{303}: commit: Added log4j config.
+[33m9cd625b[m HEAD@{304}: commit: Log levels, theory
+[33m43a36d6[m HEAD@{305}: commit: Logging best practices, theory
+[33m8231fef[m HEAD@{306}: commit: Configure logger, theory
+[33mb741f90[m HEAD@{307}: commit: What is logging, theory
+[33mf19f74b[m HEAD@{308}: commit: Added log4j.
+[33mf8a67ae[m HEAD@{309}: commit: Added tests for Dependency Injection task.
+[33mf2f7732[m HEAD@{310}: commit: Added main class for tests.
+[33ma78efa1[m HEAD@{311}: commit: Added File reader implementation from interface.
+[33ma5f081c[m HEAD@{312}: commit: Added Product parser implementation from interface.
+[33m4328ba5[m HEAD@{313}: commit: Added Product service implementation from interface.
+[33m831e211[m HEAD@{314}: commit: Added Product service interface.
+[33ma275942[m HEAD@{315}: commit: Added Product parser interface.
+[33mb26b63f[m HEAD@{316}: commit: Added File reader interface.
+[33meb8dbcf[m HEAD@{317}: commit: Added Product class.
+[33mfb970dd[m HEAD@{318}: commit: Implement logic for Component and Inject annotations.
+[33m7d98118[m HEAD@{319}: commit: Added FIELD annotation.
+[33meb21ae6[m HEAD@{320}: commit: Added TYPE annotation.
+[33medd6d21[m HEAD@{321}: commit: Added README.
+[33m0c01509[m HEAD@{322}: commit: Added README.
+[33m2fda68e[m HEAD@{323}: commit: Added README.
+[33m24c5c47[m HEAD@{324}: commit: Fixed codestyle.
+[33m07416ac[m HEAD@{325}: commit: DI. HW task overview, theory
+[33m68b9f21[m HEAD@{326}: commit: Difference between DIP, DI, and IoC, theory
+[33mc8d080a[m HEAD@{327}: commit: Injector implementation. Part 2, theory
+[33mcac08e5[m HEAD@{328}: commit: Injector implementation. Part 1, theory
+[33mbcd5016[m HEAD@{329}: commit: Injector intro. Annotation, theory
+[33mbb99035[m HEAD@{330}: commit: Injection using constructor, theory
+[33mc712473[m HEAD@{331}: commit: Added tests (+mockito) for OperationStrategy class.
+[33m9fb537a[m HEAD@{332}: commit: Added mock for static Storage.
+[33m524e31e[m HEAD@{333}: commit: Added mock for static Storage.
+[33m42dd9ef[m HEAD@{334}: commit: Changed mock for static Storage.
+[33m6685473[m HEAD@{335}: commit: Changed mock for static Storage.
+[33m372d602[m HEAD@{336}: commit: Changed mock for static Storage.
+[33md500ad8[m HEAD@{337}: commit: Added UNit tests for SupplyOperation class.
+[33m7168fd8[m HEAD@{338}: commit: Added UNit tests for ReturnOperation class.
+[33m36de691[m HEAD@{339}: commit: Added UNit tests for PurchaseOperation class.
+[33m464b4d3[m HEAD@{340}: commit: Added UNit tests for BalanceOperation class.
+[33m7f3b0a2[m HEAD@{341}: commit: Added UNit tests for FruitTransaction class.
+[33m81f6053[m HEAD@{342}: commit: Added UNit tests for ReportServiceImpl class.
+[33m9379163[m HEAD@{343}: commit: Codestyle and naming fix.
+[33m10ed979[m HEAD@{344}: commit: Codestyle and naming fix.
+[33md6b8d69[m HEAD@{345}: commit: Codestyle fix.
+[33m5d71a2f[m HEAD@{346}: commit: Codestyle fix.
+[33m32c5f86[m HEAD@{347}: commit: Codestyle fix.
+[33me94c7e1[m HEAD@{348}: commit: Changed version for junit 4.12 > 4.13.1
+[33mfcba041[m HEAD@{349}: commit: Added Mockito 5.1.1
+[33m0f55d93[m HEAD@{350}: commit: Added tests for FruitShopServiceImpl class.
+[33mc514ff3[m HEAD@{351}: commit: Refactored code.
+[33m91b2c38[m HEAD@{352}: commit: Refactored code.
+[33md0485e9[m HEAD@{353}: commit: Refactored code.
+[33me85d6a3[m HEAD@{354}: commit: Refactored code.
+[33m36bb846[m HEAD@{355}: commit: Added test for FileWriterServiceImpl class.
+[33m7e40271[m HEAD@{356}: commit: Added test for FileReaderServiceImpl class.
+[33mffdf208[m HEAD@{357}: commit: Refactored code.
+[33m7baf63d[m HEAD@{358}: commit: Change naming.
+[33m0e7f679[m HEAD@{359}: commit: Change naming.
+[33mb7373ea[m HEAD@{360}: commit: Change naming.
+[33m58db090[m HEAD@{361}: commit: Codestyle fix
+[33mae80486[m HEAD@{362}: commit: Overridden toString, hashCode and equals
+[33mf22fcc9[m HEAD@{363}: commit: Codestyle fix
+[33m5ce456c[m HEAD@{364}: commit: Added JUnit test for CsvTransactionsParserImpl class
+[33ma9844fd[m HEAD@{365}: commit: Added JUnit test for Storage class
+[33m9c10d12[m HEAD@{366}: commit: Added original implementation from fruit-shop
+[33m9b9394d[m HEAD@{367}: commit: Codestyle fix
+[33m70714ea[m HEAD@{368}: commit: Dependency Injection theory
+[33mb84749a[m HEAD@{369}: commit: Naming and codestyle fix
+[33md91330b[m HEAD@{370}: commit: Naming fix
+[33mf6b5d03[m HEAD@{371}: commit: Naming fix
+[33m0104ce8[m HEAD@{372}: commit: Codestyle fix
+[33me5147ec[m HEAD@{373}: commit: Changed return in method, also codestyle fix.
+[33mf2c4a56[m HEAD@{374}: commit: Changed return in method, also codestyle fix.
+[33m6fcdb6b[m HEAD@{375}: commit: Changed return in method, also added new method purchaseOperation() and codestyle fix.
+[33m2fcf1b4[m HEAD@{376}: commit: Codestyle fix
+[33m4f6186e[m HEAD@{377}: commit: Naming fix
+[33m16d38b4[m HEAD@{378}: commit: Naming fix
+[33mee33971[m HEAD@{379}: commit: Codestyle fix
+[33m6aa88ba[m HEAD@{380}: commit: Codestyle fix
+[33m9fdf43d[m HEAD@{381}: commit: Codestyle fix
+[33mdbd36b5[m HEAD@{382}: commit: Codestyle fix and refactoring main method
+[33m325002c[m HEAD@{383}: commit: Codestyle fix
+[33m79192b2[m HEAD@{384}: commit: Changed interface name
+[33m668e5e3[m HEAD@{385}: commit: Changed interface name
+[33maedbf32[m HEAD@{386}: commit: Changed interface name
+[33m5053d1f[m HEAD@{387}: commit: Changed interface name
+[33m5328ab9[m HEAD@{388}: commit: Added new interface
+[33mc71abd4[m HEAD@{389}: commit: Interface name changed
+[33mea132e5[m HEAD@{390}: commit: Refactored code
+[33md983587[m HEAD@{391}: commit: Changed package
+[33mf2d610d[m HEAD@{392}: commit: Added new get method
+[33m5e45ef7[m HEAD@{393}: commit: Added new get method
+[33mcd6e1e4[m HEAD@{394}: commit: Added new get method
+[33me46d39e[m HEAD@{395}: commit: Added new get method
+[33m1c15639[m HEAD@{396}: commit: Stream > foreach
+[33m10b486b[m HEAD@{397}: commit: Added new exception
+[33m62bae14[m HEAD@{398}: commit: Added new get
+[33mbb60a45[m HEAD@{399}: commit: Changed stream > for and refactored code
+[33m89ef97c[m HEAD@{400}: commit: Changed exceptions
+[33ma0b62ba[m HEAD@{401}: commit: Changed name of class
+[33m8818e48[m HEAD@{402}: commit: Changed names of variables and class
+[33m4a9dfe9[m HEAD@{403}: commit: Removed CsvTransactionsParserParserImpl class
+[33mf9135b1[m HEAD@{404}: commit: Added CsvTransactionsParserImpl class
+[33m654565b[m HEAD@{405}: commit: Added CsvFileValidationImpl class
+[33m54e3d5f[m HEAD@{406}: commit: HashMap is now private
+[33mdf6149d[m HEAD@{407}: commit: Removed extra methods and enum.
+[33m302c7a7[m HEAD@{408}: commit: Code logic fix
+[33m8c2c444[m HEAD@{409}: commit: Replacing implementation with stream
+[33m25bff1f[m HEAD@{410}: commit: Replacing implementation with stream
+[33md92694e[m HEAD@{411}: commit: Replacing implementation with stream
+[33m20777dc[m HEAD@{412}: commit: Codestyle fix
+[33m6771b27[m HEAD@{413}: commit: Added Map Storage for shop fruits.
+[33me1f4f99[m HEAD@{414}: commit: Added FruitTransaction as recommended in the task.
+[33m964045c[m HEAD@{415}: commit: All implementations of operations are placed in specific classes.
+[33md4ea4b7[m HEAD@{416}: commit: Added a class to implement the strategy pattern.
+[33mb18ff12[m HEAD@{417}: commit: Added interface for operations.
+[33m249e352[m HEAD@{418}: commit: The implementation of transactions processing is moved to a separate interface and class.
+[33m7748f21[m HEAD@{419}: commit: The implementation of CSV file parsing is moved to a separate interface and class.
+[33m2d32371[m HEAD@{420}: commit: The implementation of creating of report is moved to a separate interface and class.
+[33m1374460[m HEAD@{421}: commit: The implementation of writing in a file is moved to a separate interface and class.
+[33ma1e5a9c[m HEAD@{422}: commit: The implementation of reading a file is moved to a separate interface and class.
+[33m84a7174[m HEAD@{423}: commit: Changed the implementation of the solution, taking into account all changes.
+[33m599e40c[m HEAD@{424}: commit: transaction.csv moved to another directory as requested.
+[33m27b2cf8[m HEAD@{425}: commit: Old fruit shop realization
+[33m1682e8f[m HEAD@{426}: commit: fix csvs files
+[33m2f8446b[m HEAD@{427}: commit: test
+[33m835d185[m HEAD@{428}: commit: codestyle fix
+[33mdb8c678[m HEAD@{429}: commit: up
+[33m56e1274[m HEAD@{430}: commit: SOLID: DI - Dependency Inversion Principle, theory
+[33m55bfb22[m HEAD@{431}: commit: SOLID: LSP - Liskov Substitution Principle, theory
+[33mfd840d6[m HEAD@{432}: commit: SOLID OCP: Open Closed Principle, theory
+[33ma69b3fb[m HEAD@{433}: commit: SOLID SRP: Single Responsibility Principle, theory
+[33m2d72e4a[m HEAD@{434}: commit: SOLID Intro, theory
+[33m549a6a0[m HEAD@{435}: commit: Uppercase string from array, practice
+[33m2f77a82[m HEAD@{436}: commit: Unique numbers, practice
+[33mfb7e862[m HEAD@{437}: commit: Car models, practice
+[33m90ad067[m HEAD@{438}: commit: Filter and modify letters, practice
+[33m24343bf[m HEAD@{439}: commit: Sort names, practice
+[33m42e0aac[m HEAD@{440}: commit: up
+[33ma46bee4[m HEAD@{441}: commit: upgraded to master
+[33m6e64537[m HEAD@{442}: commit: fixed switch-case
+[33m8933b35[m HEAD@{443}: commit: up
+[33mbcb5a0e[m HEAD@{444}: commit: fix path
+[33m3d00bf9[m HEAD@{445}: commit: DateTime Api, master
+[33mf4885ea[m HEAD@{446}: commit: removed extra directories
+[33mc8b860c[m HEAD@{447}: commit: fix imports
+[33m92fb075[m HEAD@{448}: commit: Date Time Api, practice
+[33m8fa80d3[m HEAD@{449}: commit: Date Time Api, practice
+[33mddf3fd8[m HEAD@{450}: commit: Get Optional value, practice
+[33m98af1b4[m HEAD@{451}: commit: Get Optional value, master
+[33m5ec4f6f[m HEAD@{452}: commit: Duration and Period, theory
+[33mcc0c27f[m HEAD@{453}: commit: Zones in DateTime API, theory
+[33m3b30fa0[m HEAD@{454}: commit: DateTime API. What is now? Theory
+[33m04bd729[m HEAD@{455}: commit: DateTime API. What was before? Theory
+[33m5fa3afa[m HEAD@{456}: commit: How to use Optional? Theory
+[33m06ef5da[m HEAD@{457}: commit: How to create Optional? Theory
+[33m3c00771[m HEAD@{458}: commit: Optional, theory
+[33m66f9695[m HEAD@{459}: commit: getWorkablePeople Predicate moved inside method.
+[33m50dd275[m HEAD@{460}: commit: Stream Practice task
+[33m18ce762[m HEAD@{461}: commit: StreamApi part three master
+[33m74fb7de[m HEAD@{462}: commit: StreamApi part three practice
+[33mb6f0b98[m HEAD@{463}: commit: StreamApi part two practice
+[33m98f5b64[m HEAD@{464}: commit: StreamApi part two master
+[33m699f8f9[m HEAD@{465}: commit: StreamApi part one master
+[33m64d2561[m HEAD@{466}: commit: StreamApi part one practice
+[33me58c85f[m HEAD@{467}: commit: StreamAPI performance theory
+[33m73d6036[m HEAD@{468}: commit: How to debug StreamAPI theory
+[33mf5ff82b[m HEAD@{469}: commit: Find first / findAny and anyMatch theory
+[33m726558a[m HEAD@{470}: commit: Boxed a Map to Obj theory
+[33m3f6b7a3[m HEAD@{471}: commit: Collect to Map theory
+[33m5c58d64[m HEAD@{472}: commit: Map as Stream source theory
+[33md826313[m HEAD@{473}: commit: Map ss flatmap example theory
+[33m069358b[m HEAD@{474}: commit: How to use Streams theory
+[33m6bb56c2[m HEAD@{475}: commit: How To Create Stream theory
+[33mdc94097[m HEAD@{476}: commit: Stream Of Primitives theory
+[33m6792212[m HEAD@{477}: commit: Stream API Intro theory
+[33mfb3ef0f[m HEAD@{478}: commit: Compare Engine Volumes master
+[33m9d4c7b7[m HEAD@{479}: commit: Compare Engine Volumes practice
+[33m70dacc1[m HEAD@{480}: commit: added readme
+[33m4d01615[m HEAD@{481}: commit: Check Electric Engine master
+[33m945b702[m HEAD@{482}: commit: Check Electric Engine practice
+[33m413c794[m HEAD@{483}: commit: remove
+[33m6000c98[m HEAD@{484}: commit: Check Electric Engine master
+[33m2d74bb1[m HEAD@{485}: commit: Check Electric Engine practice
+[33mdb75497[m HEAD@{486}: commit: Get Random Color practice
+[33m289c505[m HEAD@{487}: commit: Get Random Color master
+[33mbd05cea[m HEAD@{488}: commit: Find Auto Type master
+[33mcda74cd[m HEAD@{489}: commit: Find Auto Type practice
+[33m56bb707[m HEAD@{490}: commit: Private and static methods theory
+[33m67a7ad9[m HEAD@{491}: commit: Private and static methods theory
+[33m55d556a[m HEAD@{492}: commit: Working with exceptions in Functional Interfaces
+[33md0ca787[m HEAD@{493}: commit: Functional Interfaces in JDK. Supplier
+[33mf5a5a7a[m HEAD@{494}: commit: Functional Interfaces in JDK. Consumer
+[33m596224e[m HEAD@{495}: commit: Functional Interfaces in JDK. Predicate
+[33m8c392e6[m HEAD@{496}: commit: Functional Interfaces in JDK. Function
+[33madba260[m HEAD@{497}: commit: Method reference theory
+[33m16e0d64[m HEAD@{498}: commit: Method reference types theory
+[33m0a23650[m HEAD@{499}: commit: Same default method in interfaces theory
+[33mf6d4500[m HEAD@{500}: commit: Default methods theory
+[33m305643f[m HEAD@{501}: commit: Default methods theory
+[33m26f5673[m HEAD@{502}: commit: Functional Interface theory
+[33mb77df82[m HEAD@{503}: commit: Lambda types
+[33m8887346[m HEAD@{504}: commit: Lambda
+[33m5bb55c3[m HEAD@{505}: commit: Why Java 8
+[33mc841594[m HEAD@{506}: commit: Correcting grammar
+[33mad5a6d3[m HEAD@{507}: commit: unit practice fixes
+[33m1f3597a[m HEAD@{508}: commit: Inner Classes Theory
+[33me3c1db9[m HEAD@{509}: commit: Full implement
+[33ma9094da[m HEAD@{510}: commit: Check style and small fixes.
+[33m401c7da[m HEAD@{511}: commit: unit practice
+[33m55c2c2b[m HEAD@{512}: commit: unit practice
+[33mb2db643[m HEAD@{513}: commit: unit practice
+[33m74a5288[m HEAD@{514}: commit: unit practice
+[33mbce9518[m HEAD@{515}: commit: unit practice
+[33m1c64cfa[m HEAD@{516}: commit: uncommit test
+[33m0829047[m HEAD@{517}: commit: strack practice
+[33m0eb32f5[m HEAD@{518}: commit: unit theory
+[33m843bb00[m HEAD@{519}: commit: unit theory
+[33m5e57e0d[m HEAD@{520}: commit: unit theory
+[33mfdbb6cf[m HEAD@{521}: commit: unit theory
+[33m1308256[m HEAD@{522}: commit: comparator test
+[33m0f4f63c[m HEAD@{523}: commit: immutable practice readme
+[33m3c594be[m HEAD@{524}: commit: comparator practice
+[33m1665853[m HEAD@{525}: commit: treeset practice
+[33m1f492a0[m HEAD@{526}: commit: comparator practice
+[33mc3ec9b4[m HEAD@{527}: commit: stack practice
+[33mb036412[m HEAD@{528}: commit: other
+[33m7c7c7eb[m HEAD@{529}: commit: Stack practice
+[33m2440713[m HEAD@{530}: commit: Stack practice
+[33mdf44df2[m HEAD@{531}: commit: TreeSet practice
+[33md2819ee[m HEAD@{532}: commit: Comparator practice
+[33maefeb72[m HEAD@{533}: commit: Comparator practice
+[33mba09ef5[m HEAD@{534}: commit: Deque theory
+[33m47c84d6[m HEAD@{535}: commit: Stack theory
+[33m4781abf[m HEAD@{536}: commit: Comparator and Comparable
+[33m3b135ca[m HEAD@{537}: commit: Comparator and Comparable
+[33m8d4d682[m HEAD@{538}: commit: other
+[33me8b39b5[m HEAD@{539}: commit: other
+[33m357ee11[m HEAD@{540}: commit: other
+[33mdf45f0b[m HEAD@{541}: commit: queue theory
+[33ma530d09[m HEAD@{542}: commit: set theory
+[33m4729792[m HEAD@{543}: commit: set theory
+[33m9c235a4[m HEAD@{544}: commit: immutable practice
+[33mfbd5da4[m HEAD@{545}: commit: array practice
+[33m760ec12[m HEAD@{546}: commit: other
+[33m3ce290d[m HEAD@{547}: commit: Array practice
+[33m6d83633[m HEAD@{548}: commit: Array practice
+[33mee8d48c[m HEAD@{549}: commit: Array practice
+[33m29d90cf[m HEAD@{550}: commit: Immutable theory
+[33mcae12e1[m HEAD@{551}: commit: HashMap practice
+[33m79d10ee[m HEAD@{552}: commit: HashMap practice
+[33mcefbc25[m HEAD@{553}: commit: Name converter
+[33m00de030[m HEAD@{554}: commit: HashMap another students work
+[33m3f6122b[m HEAD@{555}: commit: HashMap another students work
+[33mc36faeb[m HEAD@{556}: commit: HashMap another students work
+[33mcb717a7[m HEAD@{557}: commit: Directory name fix
+[33mbc5dc87[m HEAD@{558}: commit: HashMap practice tests
+[33m178185b[m HEAD@{559}: commit: PECS practice, analyzing another students works
+[33m8ade869[m HEAD@{560}: commit: PECS practice, analyzing another students works
+[33mf01d8d4[m HEAD@{561}: commit: HashMap practice master
+[33mb520f38[m HEAD@{562}: commit: HashMap practice
+[33m9898ccd[m HEAD@{563}: commit: HashMap practice
+[33mde81f6b[m HEAD@{564}: commit: HashMap practice
+[33maf18321[m HEAD@{565}: commit: HashMap practice
+[33m7bed69b[m HEAD@{566}: commit: HashMap theory
+[33m85392af[m HEAD@{567}: commit: HashMap theory
+[33m2ec79ca[m HEAD@{568}: commit: PECS practice
+[33m2b44afc[m HEAD@{569}: commit: PECS extra theory
+[33m1a27461[m HEAD@{570}: commit: LinkedList practice
+[33m3ad9550[m HEAD@{571}: commit: ArrayList practice
+[33m054c2e1[m HEAD@{572}: commit: ArrayList practice
+[33m8545ee6[m HEAD@{573}: commit: PECS theory
+[33mbc2483b[m HEAD@{574}: rebase (finish): returning to refs/heads/master
+[33mbc2483b[m HEAD@{575}: rebase (pick): Linked list theory
+[33mb7ab224[m HEAD@{576}: commit: List Filter solution
+[33mf38c903[m HEAD@{577}: commit: Elements sum solution
+[33m3fa303c[m HEAD@{578}: commit: ArrayList theory
+[33m184bc04[m HEAD@{579}: commit: Storage practice solution
