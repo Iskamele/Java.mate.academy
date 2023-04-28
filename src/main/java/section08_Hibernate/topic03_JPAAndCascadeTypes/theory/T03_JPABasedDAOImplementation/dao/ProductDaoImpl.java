@@ -7,6 +7,7 @@ import section08_Hibernate.topic03_JPAAndCascadeTypes.theory.T03_JPABasedDAOImpl
 import section08_Hibernate.topic03_JPAAndCascadeTypes.theory.T03_JPABasedDAOImplementation.util.HibernateUtil;
 
 public class ProductDaoImpl implements ProductDao {
+
     @Override
     public Product save(Product product) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
