@@ -1,10 +1,10 @@
 package section08_Hibernate.topic01_HibernateEntitiesAndTransactions.practice.HibernateConfigurationHw.dao;
 
-import java.util.Optional;
 import section08_Hibernate.topic01_HibernateEntitiesAndTransactions.practice.HibernateConfigurationHw.exception.DataProcessingException;
 import section08_Hibernate.topic01_HibernateEntitiesAndTransactions.practice.HibernateConfigurationHw.lib.Dao;
 import section08_Hibernate.topic01_HibernateEntitiesAndTransactions.practice.HibernateConfigurationHw.model.Movie;
 import section08_Hibernate.topic01_HibernateEntitiesAndTransactions.practice.HibernateConfigurationHw.util.HibernateUtil;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
