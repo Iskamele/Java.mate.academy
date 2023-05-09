@@ -1,9 +1,9 @@
 package section08_Hibernate.topic04_WorkingWithLazyInitialization.theory.T01_HQL.dao;
 
 import java.math.BigDecimal;
-import section08_Hibernate.topic04_WorkingWithLazyInitialization.theory.T01_HQL.util.HibernateUtil;
-import section08_Hibernate.topic04_WorkingWithLazyInitialization.theory.T01_HQL.model.Product;
 import java.util.List;
+import section08_Hibernate.topic04_WorkingWithLazyInitialization.theory.T01_HQL.model.Product;
+import section08_Hibernate.topic04_WorkingWithLazyInitialization.theory.T01_HQL.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -37,7 +37,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public Product get(Long id) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        try (Session session = sessionFactory.openSession();) {
+        try (Session session = sessionFactory.openSession()) {
             return session.get(Product.class, id);
         }
     }
@@ -45,7 +45,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> findAll() {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        try (Session session = sessionFactory.openSession();) {
+        try (Session session = sessionFactory.openSession()) {
             Query<Product> getAllProductsQuery = session.createQuery(
                     "FROM Product", Product.class);
             return getAllProductsQuery.getResultList();
@@ -55,7 +55,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> findAllWherePriceGreaterThan(BigDecimal price) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        try (Session session = sessionFactory.openSession();) {
+        try (Session session = sessionFactory.openSession()) {
             Query<Product> getAllProductsQuery = session.createQuery(
                     "FROM Product p WHERE p.price > :value", Product.class);
             getAllProductsQuery.setParameter("value", price);
