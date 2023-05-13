@@ -8,8 +8,7 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create-drop</property>
 
-        <mapping class="section08_Hibernate.topic02_EntityRelationsAndLifeCycle.theory.T05_BidirectionalManyToMany.model.Order"/>
-        <mapping class="section08_Hibernate.topic02_EntityRelationsAndLifeCycle.theory.T05_BidirectionalManyToMany.model.User"/>
-        <mapping class="section08_Hibernate.topic02_EntityRelationsAndLifeCycle.theory.T05_BidirectionalManyToMany.model.Product"/>
+        <mapping class="section08_Hibernate.topic07_N1Problem.theory.T02_NProblem.model.Author"/>
+        <mapping class="section08_Hibernate.topic07_N1Problem.theory.T02_NProblem.model.Book"/>
     </session-factory>
 </hibernate-configuration>

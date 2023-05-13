@@ -4,7 +4,7 @@
     <!-- Define persistence unit -->
     <persistence-unit name="mate.academy.ticket_app">
         <description>Hibernate EntityManager Demo</description>
-        <class>section08_Hibernate.topic03_JPAAndCascadeTypes.theory.T03_JPABasedDAOImplementation.model.Product</class>
+        <class>Hibernate.topic03_JPAAndCascadeTypes.theory.T03_JPABasedDAOImplementation.model.Product</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL55Dialect"/>
