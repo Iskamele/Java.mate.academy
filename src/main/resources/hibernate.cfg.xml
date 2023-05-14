@@ -6,9 +6,8 @@
         <property name="connection.username">root</property>
         <property name="connection.password">8CMT3f~8F4H_2v+f4py^d7+3p%MP)!fG</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">validate</property>
 
-        <mapping class="section08_Hibernate.topic07_N1Problem.theory.T02_NProblem.model.Author"/>
-        <mapping class="section08_Hibernate.topic07_N1Problem.theory.T02_NProblem.model.Book"/>
+        <mapping class="section08_Hibernate.topic08_DBChangesManagementTools.theory.T01_DatabaseChangeManagementTools.model.Product"/>
     </session-factory>
 </hibernate-configuration>
