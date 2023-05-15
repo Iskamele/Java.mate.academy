@@ -1,6 +1,7 @@
 package section08_Hibernate.topic08_DBChangesManagementTools.practice.HibernateOrder.service.impl;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import section08_Hibernate.topic08_DBChangesManagementTools.practice.HibernateOrder.dao.OrderDao;
 import section08_Hibernate.topic08_DBChangesManagementTools.practice.HibernateOrder.lib.Inject;
@@ -13,8 +14,6 @@ import section08_Hibernate.topic08_DBChangesManagementTools.practice.HibernateOr
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    private static final LocalDateTime CURRENT_DATE_TIME = LocalDateTime.now();
-
     @Inject
     private OrderDao orderDao;
     @Inject
@@ -23,8 +22,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order completeOrder(ShoppingCart shoppingCart) {
         Order order = new Order();
-        order.setTickets(shoppingCart.getTickets());
-        order.setOrderDate(CURRENT_DATE_TIME);
+        order.setTickets(new ArrayList<>(shoppingCart.getTickets()));
+        order.setOrderDate(LocalDateTime.now());
         order.setUser(shoppingCart.getUser());
         shoppingCartService.clearShoppingCart(shoppingCart);
         return orderDao.add(order);
