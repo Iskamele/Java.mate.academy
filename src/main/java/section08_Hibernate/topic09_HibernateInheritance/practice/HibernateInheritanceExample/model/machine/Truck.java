@@ -1,0 +1,25 @@
+package section08_Hibernate.topic09_HibernateInheritance.practice.HibernateInheritanceExample.model.machine;
+
+import javax.persistence.Entity;
+
+@Entity(name = "truck")
+public class Truck extends Machine {
+    private String color;
+    private double maxAllowedWeight;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getMaxAllowedWeight() {
+        return maxAllowedWeight;
+    }
+
+    public void setMaxAllowedWeight(double maxAllowedWeight) {
+        this.maxAllowedWeight = maxAllowedWeight;
+    }
+}
