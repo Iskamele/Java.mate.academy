@@ -26,6 +26,6 @@ public class DemoController {
     @ResponseBody
     @GetMapping("/phone")
     public Product getProduct(){
-        return new Product(1L, "iPhone 7", BigDecimal.valueOf(588));
+        return new Product(1L, "iPhone 7", "Apple", BigDecimal.valueOf(588));
     }
 }
