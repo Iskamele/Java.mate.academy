@@ -1,6 +1,6 @@
 package section09_Spring.topic04_REST.practice.SpringRest.dao;
 
-import mate.academy.spring.exception.DataProcessingException;
+import section09_Spring.topic04_REST.practice.SpringRest.exception.DataProcessingException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
