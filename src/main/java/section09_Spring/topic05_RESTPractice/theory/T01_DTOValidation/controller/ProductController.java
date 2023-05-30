@@ -60,7 +60,6 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-
     public ProductResponseDto get(@PathVariable Long id) {
         return productDtoMapper.parse(productService.get(id));
     }
