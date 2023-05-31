@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("src/main/java/Other/DirectoryNameConverter/names.txt");
+        File file = new File("src/main/java/Other/DirectoryNameConverterV1/names.txt");
         try {
             StringBuilder builder = new StringBuilder();
             BufferedReader reader = new BufferedReader(new FileReader(file));
