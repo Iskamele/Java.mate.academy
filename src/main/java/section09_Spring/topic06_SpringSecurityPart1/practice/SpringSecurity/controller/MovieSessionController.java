@@ -2,6 +2,7 @@ package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.con
 
 import java.time.LocalDate;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.mode
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.MovieSessionService;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper.RequestDtoMapper;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper.ResponseDtoMapper;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.util.DateTimePatternUtil;
 
 @RestController
 @RequestMapping("/movie-sessions")
@@ -38,7 +40,7 @@ public class MovieSessionController {
     }
 
     @PostMapping
-    public MovieSessionResponseDto add(@RequestBody MovieSessionRequestDto requestDto) {
+    public MovieSessionResponseDto add(@RequestBody @Valid MovieSessionRequestDto requestDto) {
         MovieSession movieSession = movieSessionRequestDtoMapper.mapToModel(requestDto);
         movieSessionService.add(movieSession);
         return movieSessionResponseDtoMapper.mapToDto(movieSession);
@@ -57,7 +59,7 @@ public class MovieSessionController {
 
     @PutMapping("/{id}")
     public MovieSessionResponseDto update(@PathVariable Long id,
-                                          @RequestBody MovieSessionRequestDto requestDto) {
+                                          @RequestBody @Valid MovieSessionRequestDto requestDto) {
         MovieSession movieSession = movieSessionRequestDtoMapper.mapToModel(requestDto);
         movieSession.setId(id);
         movieSessionService.update(movieSession);
@@ -65,7 +67,7 @@ public class MovieSessionController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable @Valid Long id) {
         movieSessionService.delete(id);
     }
 }
