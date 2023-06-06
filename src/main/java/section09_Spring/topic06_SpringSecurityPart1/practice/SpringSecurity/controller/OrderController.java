@@ -1,10 +1,11 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.controller;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.response.OrderResponseDto;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.Order;
@@ -33,14 +34,20 @@ public class OrderController {
     }
 
     @PostMapping("/complete")
-    public OrderResponseDto completeOrder(@RequestParam Long userId) {
-        ShoppingCart cart = shoppingCartService.getByUser(userService.get(userId));
+    public OrderResponseDto completeOrder(Authentication authentication) {
+        ShoppingCart cart = shoppingCartService.getByUser(
+                userService.findByEmail(authentication.getName()).orElseThrow(() ->
+                        new NoSuchElementException("Couldn't complete order for: "
+                                + authentication.getName())));
         return orderResponseDtoMapper.mapToDto(orderService.completeOrder(cart));
     }
 
     @GetMapping
-    public List<OrderResponseDto> getOrderHistory(@RequestParam Long userId) {
-        return orderService.getOrdersHistory(userService.get(userId))
+    public List<OrderResponseDto> getOrderHistory(Authentication authentication) {
+        return orderService.getOrdersHistory(
+                        userService.findByEmail(authentication.getName()).orElseThrow(() ->
+                                new NoSuchElementException("Couldn't get order history for: "
+                                        + authentication.getName())))
                 .stream()
                 .map(orderResponseDtoMapper::mapToDto)
                 .toList();
