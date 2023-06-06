@@ -1,7 +1,7 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper;
 
-import mate.academy.spring.dto.response.UserResponseDto;
-import mate.academy.spring.model.User;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.response.UserResponseDto;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.User;
 import org.springframework.stereotype.Component;
 
 @Component

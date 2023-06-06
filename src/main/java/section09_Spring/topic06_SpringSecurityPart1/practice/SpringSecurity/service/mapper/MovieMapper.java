@@ -1,8 +1,8 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper;
 
-import mate.academy.spring.dto.request.MovieRequestDto;
-import mate.academy.spring.dto.response.MovieResponseDto;
-import mate.academy.spring.model.Movie;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.request.MovieRequestDto;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.response.MovieResponseDto;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.Movie;
 import org.springframework.stereotype.Component;
 
 @Component

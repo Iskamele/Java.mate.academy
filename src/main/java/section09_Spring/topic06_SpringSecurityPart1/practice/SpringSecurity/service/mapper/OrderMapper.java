@@ -1,8 +1,8 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper;
 
-import mate.academy.spring.dto.response.OrderResponseDto;
-import mate.academy.spring.model.Order;
-import mate.academy.spring.model.Ticket;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.response.OrderResponseDto;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.Order;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.Ticket;
 import org.springframework.stereotype.Component;
 
 @Component

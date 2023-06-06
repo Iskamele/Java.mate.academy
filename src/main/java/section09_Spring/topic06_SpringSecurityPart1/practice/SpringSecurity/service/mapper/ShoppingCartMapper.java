@@ -1,8 +1,8 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper;
 
-import mate.academy.spring.dto.response.ShoppingCartResponseDto;
-import mate.academy.spring.model.ShoppingCart;
-import mate.academy.spring.model.Ticket;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.response.ShoppingCartResponseDto;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.ShoppingCart;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.Ticket;
 import org.springframework.stereotype.Component;
 
 @Component
