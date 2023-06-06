@@ -8,6 +8,7 @@ import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.model.User;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.UserService;
 import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.service.mapper.ResponseDtoMapper;
+import section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.validation.Email;
 
 @RestController
 @RequestMapping("/users")
@@ -22,9 +23,9 @@ public class UserController {
     }
 
     @GetMapping("/by-email")
-    public UserResponseDto findByEmail(@RequestParam String email) {
+    public UserResponseDto findByEmail(@RequestParam @Email String email) {
         User user = userService.findByEmail(email).orElseThrow(
-                () -> new RuntimeException("Invalid email"));
+                () -> new RuntimeException("Couldn't find user by email: " + email));
         return userResponseDtoMapper.mapToDto(user);
     }
 }
