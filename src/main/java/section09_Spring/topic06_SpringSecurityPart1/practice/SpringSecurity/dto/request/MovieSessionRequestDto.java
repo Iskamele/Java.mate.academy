@@ -1,10 +1,15 @@
 package section09_Spring.topic06_SpringSecurityPart1.practice.SpringSecurity.dto.request;
 
 import java.time.LocalDateTime;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 public class MovieSessionRequestDto {
+    @Min(value = 1)
     private Long movieId;
+    @Min(value = 1)
     private Long cinemaHallId;
+    @NotNull
     private LocalDateTime showTime;
 
     public Long getMovieId() {
