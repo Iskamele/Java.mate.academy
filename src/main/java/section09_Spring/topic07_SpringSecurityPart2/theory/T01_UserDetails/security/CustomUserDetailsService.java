@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T05_ObtainInformationAboutCurrentUser.model.User;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T05_ObtainInformationAboutCurrentUser.service.UserService;
+import section09_Spring.topic07_SpringSecurityPart2.theory.T01_UserDetails.model.User;
+import section09_Spring.topic07_SpringSecurityPart2.theory.T01_UserDetails.service.UserService;
 
 // TODO
 @Service

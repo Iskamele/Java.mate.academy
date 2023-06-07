@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T05_ObtainInformationAboutCurrentUser.model.Role;
 
 // TODO
 @Entity
@@ -20,9 +19,9 @@ public class User {
     private String password;
     @ManyToMany
 
-    private Set<section09_Spring.topic06_SpringSecurityPart1.theory.T05_ObtainInformationAboutCurrentUser.model.Role> roles;
+    private Set<Role> roles;
 
-    public Set<section09_Spring.topic06_SpringSecurityPart1.theory.T05_ObtainInformationAboutCurrentUser.model.Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
