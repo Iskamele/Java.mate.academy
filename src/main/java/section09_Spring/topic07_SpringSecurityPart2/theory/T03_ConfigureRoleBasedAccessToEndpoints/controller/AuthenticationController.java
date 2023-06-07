@@ -1,0 +1,4 @@
+package section09_Spring.topic07_SpringSecurityPart2.theory.T03_ConfigureRoleBasedAccessToEndpoints.controller;
+
+public class AuthenticationController {
+}
