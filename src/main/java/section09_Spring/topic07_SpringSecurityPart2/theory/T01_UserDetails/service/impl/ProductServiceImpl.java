@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T02_StartSecurityConfiguration.dao.ProductDao;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T02_StartSecurityConfiguration.model.Product;
-import section09_Spring.topic06_SpringSecurityPart1.theory.T02_StartSecurityConfiguration.service.ProductService;
+import section09_Spring.topic07_SpringSecurityPart2.theory.T01_UserDetails.dao.ProductDao;
+import section09_Spring.topic07_SpringSecurityPart2.theory.T01_UserDetails.model.Product;
+import section09_Spring.topic07_SpringSecurityPart2.theory.T01_UserDetails.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {
