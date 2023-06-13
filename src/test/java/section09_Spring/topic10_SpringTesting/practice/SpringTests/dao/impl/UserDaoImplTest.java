@@ -2,13 +2,14 @@ package section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.impl;
 
 import java.util.Optional;
 import java.util.Set;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.RoleDao;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.UserDao;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.RoleDao;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.UserDao;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.exception.DataProcessingException;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.User;
 
 class UserDaoImplTest extends AbstractTest {
     private static final String EMAIL = "bob@i.ua";
@@ -58,7 +59,7 @@ class UserDaoImplTest extends AbstractTest {
     @Test
     void save_saveNull_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class, () -> userDao.save(null));
+        Assertions.assertThrows(DataProcessingException.class, () -> userDao.save(null));
     }
 
     @Test
@@ -70,6 +71,7 @@ class UserDaoImplTest extends AbstractTest {
         Optional<User> actual = userDao.findByEmail(EMAIL);
 
         //assert
+        Assertions.assertTrue(actual.isPresent());
         Assertions.assertEquals(EMAIL, actual.get().getEmail());
         Assertions.assertEquals(PASSWORD, actual.get().getPassword());
     }
@@ -77,22 +79,19 @@ class UserDaoImplTest extends AbstractTest {
     @Test
     void findByEmail_notExistingEmail_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class,
-                () -> userDao.findByEmail(NOT_EXISTING_EMAIL).orElseThrow());
+        Assertions.assertFalse(userDao.findByEmail(NOT_EXISTING_EMAIL).isPresent());
     }
 
     @Test
     void findByEmail_emptyEmail_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class,
-                () -> userDao.findByEmail(EMPTY_EMAIL).orElseThrow());
+        Assertions.assertFalse(userDao.findByEmail(EMPTY_EMAIL).isPresent());
     }
 
     @Test
     void findByEmail_nullEmail_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class,
-                () -> userDao.findByEmail(null).orElseThrow());
+        Assertions.assertFalse(userDao.findByEmail(null).isPresent());
     }
 
     @Test
@@ -105,6 +104,7 @@ class UserDaoImplTest extends AbstractTest {
         Optional<User> actual = userDao.findById(expected);
 
         //assert
+        Assertions.assertTrue(actual.isPresent());
         Assertions.assertEquals(expected, actual.get().getId());
         Assertions.assertEquals(EMAIL, actual.get().getEmail());
         Assertions.assertEquals(PASSWORD, actual.get().getPassword());
@@ -113,14 +113,13 @@ class UserDaoImplTest extends AbstractTest {
     @Test
     void findById_notExistingId_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class,
-                () -> userDao.findById(NOT_EXISTING_ID).orElseThrow());
+        Assertions.assertFalse(userDao.findById(NOT_EXISTING_ID).isPresent());
     }
 
     @Test
     void findById_nullId_NotOk() {
         //assert
-        Assertions.assertThrows(Exception.class,
-                () -> userDao.findById(null).orElseThrow());
+        Assertions.assertThrows(DataProcessingException.class,
+                () -> userDao.findById(null));
     }
 }
