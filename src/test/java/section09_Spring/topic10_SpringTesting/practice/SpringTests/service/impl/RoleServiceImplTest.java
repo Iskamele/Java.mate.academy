@@ -2,14 +2,14 @@ package section09_Spring.topic10_SpringTesting.practice.SpringTests.service.impl
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.RoleDao;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.impl.RoleDaoImpl;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.service.RoleService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.RoleDao;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.dao.impl.RoleDaoImpl;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.service.RoleService;
 
 class RoleServiceImplTest {
     private static final Role.RoleName USER_ROLE = Role.RoleName.USER;
@@ -59,7 +59,7 @@ class RoleServiceImplTest {
 
         //act & assert
         Assertions.assertThrows(NoSuchElementException.class,
-                () -> roleDao.getRoleByName(NOT_EXISTING_ROLE).orElseThrow());
+                () -> roleService.getRoleByName(NOT_EXISTING_ROLE));
         Mockito.verify(roleDao).getRoleByName(NOT_EXISTING_ROLE);
     }
 
@@ -71,7 +71,7 @@ class RoleServiceImplTest {
 
         //act & assert
         Assertions.assertThrows(NoSuchElementException.class,
-                () -> roleDao.getRoleByName(null).orElseThrow());
+                () -> roleService.getRoleByName(null));
         Mockito.verify(roleDao).getRoleByName(null);
     }
 }
