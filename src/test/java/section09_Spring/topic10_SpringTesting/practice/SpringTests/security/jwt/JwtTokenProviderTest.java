@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,6 +13,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import section09_Spring.topic10_SpringTesting.practice.SpringTests.model.Role;
 
 public class JwtTokenProviderTest {
     private static final String SECRET_KEY = "secret";
@@ -23,7 +23,6 @@ public class JwtTokenProviderTest {
     private final List<String> roleList = new ArrayList<>();
     private JwtTokenProvider jwtTokenProvider;
     private UserDetailsService userDetailsService;
-    private String token;
 
     @BeforeEach
     void setUp() throws NoSuchFieldException, IllegalAccessException {
@@ -39,12 +38,14 @@ public class JwtTokenProviderTest {
 
         roleList.add(Role.RoleName.USER.name());
         roleList.add(Role.RoleName.ADMIN.name());
-        token = jwtTokenProvider.createToken(EMAIL, roleList);
     }
 
     @Test
     void createToken_Ok() {
-        //act & assert
+        // Act
+        String token = jwtTokenProvider.createToken(EMAIL, roleList);
+
+        //assert
         Assertions.assertNotNull(token);
         Assertions.assertTrue(token.length() > 128);
     }
@@ -56,9 +57,9 @@ public class JwtTokenProviderTest {
         Mockito.when(userDetailsService.loadUserByUsername(Mockito.any())).thenReturn(userDetails);
 
         //act
+        String token = jwtTokenProvider.createToken(EMAIL, roleList);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-                (UsernamePasswordAuthenticationToken)
-                        this.jwtTokenProvider.getAuthentication(token);
+                (UsernamePasswordAuthenticationToken) jwtTokenProvider.getAuthentication(token);
 
         //assert
         Assertions.assertEquals(EMAIL,
@@ -86,6 +87,9 @@ public class JwtTokenProviderTest {
 
     @Test
     void getUsername_ok() {
+        //arrange
+        String token = jwtTokenProvider.createToken(EMAIL, roleList);
+
         //act & assert
         Assertions.assertEquals(EMAIL, jwtTokenProvider.getUsername(token));
     }
